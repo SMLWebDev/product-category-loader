@@ -4,6 +4,10 @@
  * Description: Adds a shortcode [ajax_product_category] to display product categories with pagination.
  * Version: 1.0.0
  * Author: Simon Lowe
+ * Author URI: https://smlwebdevelopment.co.uk
+ * Plugin URI: https://github.com/SMLWebDev/woo-category-grid-loader
+ * GitHub Plugin URI: https://github.com/SMLWebDev/woo-category-grid-loader
+ * GitHub Issues: https://github.com/SMLWebDev/woo-category-grid-loader/issues
  * License: MIT
  * License URI: https://opensource.org/licenses/MIT
  * Text Domain: woo-category-grid-loader
@@ -39,7 +43,7 @@
  // Enqueue scripts and styles
  add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style( 'wcgl-style', plugin_dir_url(__FILE__) . 'style.css' );
-    wp_enqueue_script( 'wcgl-script', plugin_dir_url(__FILE__) . 'script.js', [jquery], false, true );
+    wp_enqueue_script( 'wcgl-script', plugin_dir_url(__FILE__) . 'script.js', ['jquery'], false, true );
     wp_localize_script( 'wcgl-script', 'wcgl-ajax', [
         'ajax_url' => admin_url( 'admin-ajax.php' ),
         'nonce' => wp_create_nonce( 'load_more_cats' )
@@ -53,7 +57,7 @@
     check_ajax_referer( 'load_categories_nonce', 'nonce' );
 
     $paged = intval( $_POST['page'] );
-    $per_page = intval( $_POST['per_page'] ) ? min(intvale( $_POST['per_page'] ), 50) : 6;
+    $per_page = intval( $_POST['per_page'] ) ? min(intval( $_POST['per_page'] ), 50) : 6;
 
     $args = [
         'taxonomy'      => 'product_cat',
