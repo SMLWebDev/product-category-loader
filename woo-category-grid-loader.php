@@ -37,7 +37,7 @@
  });
 
  // Enqueue scripts and styles
- add_action( 'wp_enqeue_scripts', function() {
+ add_action( 'wp_enqueue_scripts', function() {
     wp_enqueue_style( 'wcgl-style', plugin_dir_url(__FILE__) . 'style.css' );
     wp_enqueue_script( 'wcgl-script', plugin_dir_url(__FILE__) . 'script.js', [jquery], false, true );
     wp_localize_script( 'wcgl-script', 'wcgl-ajax', [
@@ -87,8 +87,3 @@
     wp_send_json_success($html);
 
  }
-
- wp_localize_script('wcgl-script', 'wcgl_ajax', [
-    'ajax_url' => admin_url('admin-ajax.php'),
-    'nonce'    => wp_create_nonce('load_categories_nonce'),
-]);
