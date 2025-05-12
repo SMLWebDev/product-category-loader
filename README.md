@@ -50,7 +50,7 @@ Customise layout using CSS or override styles in your theme:
 
 If you use Composer to manage WordPress:
 
-    1. Add this to your site's composer.json:
+##### 1. Add this to your site's composer.json:
 ```json
     "repositories": [
         {
@@ -60,15 +60,15 @@ If you use Composer to manage WordPress:
     ]
 ```
 
-    2. Require it:
+##### 2. Require it:
 ```composer
-    composer require sml-web-dev/woo-category-grid-loader:dev-main
+    composer require SMLWebDev/woo-category-grid-loader:dev-main
 ```
 
-    3. Activate the plugin in WordPress admin (or automate with WP-CLI if needed).
+##### 3. Activate the plugin in WordPress admin (or automate with WP-CLI if needed).
 
 ---
 
 ## 📄 Licence
 
-The MIT License (MIT) [link](https://rem.mit-license.org/+MIT)
+The MIT License (MIT) [text](https://rem.mit-license.org/+MIT)
