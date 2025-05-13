@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Woo Category Grid Loader
  * Description: Adds a shortcode [ajax_product_category] to display product categories with pagination.
- * Version: 1.0.0
+ * Version: 0.0.0
  * Author: Simon Lowe
  * Author URI: https://smlwebdevelopment.co.uk
  * Plugin URI: https://github.com/SMLWebDev/woo-category-grid-loader
