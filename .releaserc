@@ -10,10 +10,10 @@
             "prerelease": true
         },
         {
-            "pattern": "bug/*", "prerelease": true
+            "name": "bug/*", "prerelease": true
         },
         {
-            "pattern": "feature/*", "prerelease": true
+            "name": "feature/*", "prerelease": true
         }
     ],
     "plugins": [
