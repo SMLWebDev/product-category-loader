@@ -2,6 +2,7 @@
     "name": "smlwebdev/woo-category-grid-loader",
     "description": "A WordPress plugin to load WooCommerce product categories in a grid layout with pagination.",
     "type": "wordpress-plugin",
+    "version": "1.0.0",
     "license": "MIT",
     "authors": [
         {

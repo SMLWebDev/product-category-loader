@@ -72,3 +72,10 @@ If you use Composer to manage WordPress:
 ## 📄 Licence
 
 The MIT License (MIT) [text](https://rem.mit-license.org/+MIT)
+
+---
+
+## 🔗 Plugin Links
+
+- 💻 GitHub Repository: [SMLWebDev/woo-category-grid-loader](https://github.com/SMLWebDev/woo-category-grid-loader)
+- 🐞 Report Issues: [GitHub Issues](https://github.com/SMLWebDev/woo-category-grid-loader/issues)
