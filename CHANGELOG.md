@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 22-05-2025
+## Fix
+- Fixed README.md file showing wrong composer link to add.
+
+## [1.0.0] - 22-05-2025
+## Change
+- Made plugin live as v1
+
 ## [0.2.0] - 22-05-2025
 ### Added
 - Admin settings page under **Settings > Category Grid Loader**
