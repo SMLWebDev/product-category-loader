@@ -4,7 +4,7 @@
     "description": "WooCommerce Category Grid Loader WordPress Plugin",
     "main": "index.js",
     "scripts": {
-        "version": "npm run version-update",
+        "version": "npm run version-update && git add .",
         "version-update": "node scripts/version-update.js",
         "build": "sass assets/scss/frontend.scss assets/css/frontend.css --no-source-map --style=compressed",
         "dev": "sass assets/scss/frontend.scss assets/css/frontend.css --watch"
