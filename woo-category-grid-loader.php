@@ -32,7 +32,7 @@
 
     ob_start();
     ?>
-    <div id="category-grid class="category-grid <?= esc_attr($atts['class']) ?>"></div>
+    <div id="category-grid" class="category-grid <?= esc_attr($atts['class']) ?>"></div>
     <div class="" id="load-more-wrapper" style="text-align:center; margin-top:20px;">
         <button id="load-more-categories" data-page="1">Load More...</button>
     </div>
@@ -46,7 +46,7 @@
     wp_enqueue_script( 'wcgl-script', plugin_dir_url(__FILE__) . 'script.js', ['jquery'], false, true );
     wp_localize_script( 'wcgl-script', 'wcgl-ajax', [
         'ajax_url' => admin_url( 'admin-ajax.php' ),
-        'nonce' => wp_create_nonce( 'load_more_cats' )
+        'nonce' => wp_create_nonce( 'load_categories_nonce' )
     ] );
  } );
 
@@ -65,6 +65,7 @@
         'hide_empty'    => false,
         'number'        => $per_page,
         'offset'        => ($paged - 1) * $per_page,
+        'hide_empty'    => false,
     ];
 
     $categories = get_terms($args);
