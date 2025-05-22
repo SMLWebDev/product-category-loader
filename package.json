@@ -1,0 +1,16 @@
+{
+    "name": "woo-category-grid-loader",
+    "version": "0.2.0",
+    "description": "WooCommerce Category Grid Loader WordPress Plugin",
+    "main": "index.js",
+    "scripts": {
+        "version": "echo Version bumped to $npm_package_version",
+        "build": "sass assets/scss/frontend.scss assets/css/frontend.css --no-source-map --style=compressed",
+        "dev": "sass assets/scss/frontend.scss assets/css/frontend.css --watch"
+    },
+    "author": "Simon Lowe",
+    "license": "MIT",
+    "devDependencies": {
+        "sass": "^1.89.0"
+    }
+}
