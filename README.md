@@ -62,7 +62,7 @@ If you use Composer to manage WordPress:
 
 ##### 2. Require it:
 ```composer
-    composer require sml-web-dev/woo-category-grid-loader:dev-main
+    composer require sml-web-dev/woo-category-grid-loader
 ```
 
 ##### 3. Activate the plugin in WordPress admin (or automate with WP-CLI if needed).
