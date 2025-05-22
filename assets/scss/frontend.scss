@@ -1,0 +1,33 @@
+#wcgl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.wcgl-category {
+    border: 1px solid #eee;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.3s;
+    background: #fff;
+
+    &:hover {
+        background: #f9f9f9;
+        cursor: pointer;
+    }
+}
+
+#wcgl-load-more {
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    display: inline-block;
+    background: #0073aa;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+        background: #005f8d;
+    }
+}
