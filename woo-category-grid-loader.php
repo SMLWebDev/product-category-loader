@@ -15,7 +15,7 @@
     exit;
  }
 
- define( 'WCGL_VERSION', '0.4.0' );
+ define( 'WCGL_VERSION', '0.5.0' );
  define( 'WCGL_PLUGIN_FILE', __FILE__ );
  define( 'WCGL_PLUGIN_DIR', plugin_dir_path( __FILE__ )  );
  define( 'WCGL_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
