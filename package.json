@@ -1,18 +1,17 @@
 {
-  "name": "woo-category-grid-loader",
-  "version": "0.1.0",
-  "description": "A Lightweight, customisable WordPress plugin to display WooCommerce Product Categories in a responsive Grid Layout with pagination.",
-  "main": "script.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@semantic-release/changelog": "^6.0.3",
-    "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^9.2.6",
-    "semantic-release": "^22.0.12"
-  }
+    "name": "woo-category-grid-loader",
+    "version": "0.4.0",
+    "description": "WooCommerce Category Grid Loader WordPress Plugin",
+    "main": "index.js",
+    "scripts": {
+        "version": "npm run version-update",
+        "version-update": "node scripts/version-update.js",
+        "build": "sass assets/scss/frontend.scss assets/css/frontend.css --no-source-map --style=compressed",
+        "dev": "sass assets/scss/frontend.scss assets/css/frontend.css --watch"
+    },
+    "author": "Simon Lowe",
+    "license": "MIT",
+    "devDependencies": {
+        "sass": "^1.89.0"
+    }
 }
