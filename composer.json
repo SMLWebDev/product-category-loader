@@ -3,7 +3,7 @@
   "description": "A WordPress plugin to display WooCommerce categories in a grid layout with Load More support.",
   "type": "wordpress-plugin",
   "license": "MIT",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "authors": [
     {
       "name": "Simon Lowe",
