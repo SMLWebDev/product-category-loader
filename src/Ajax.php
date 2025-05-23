@@ -55,6 +55,9 @@ class Ajax {
         $total_categories = wp_count_terms('product_cat', ['hide_empty' => false]);
         $has_more = ($page * $per_page) < $total_categories;
 
-        wp_send_json_success( $html + ['has_more' => $has_more] );
+        wp_send_json_success([
+            'html' => $html,
+            'has_more' => $has_more,
+        ]);
     }
 }
