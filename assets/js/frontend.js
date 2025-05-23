@@ -24,8 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(res => res.json())
         .then(data => {
             if (data.success) {
+                const { html, has_more } = data.data;
+
                 const temp = document.createElement('div');
-                temp.innerHTML = data.data;
+                temp.innerHTML = html;
 
                 // Separate category grid and has_more
                 const categories = temp.querySelectorAll('.wcgl-category');
@@ -34,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 page++;
                 grid.dataset.page = page;
 
-                if (!data.data.includes('has_more') || data.data.has_more === false) {
+                if (!has_more) {
                     loadMore.style.display = 'none';
                 } else {
                     loadMore.disabled = false;
