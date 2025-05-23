@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.4] - 23-05-2025
+## Fix
+- Added missing script to the end of Ajax.php
+
+---
+
 ## [1.1.3] - 23-05-2025
 ## Fix
 - Fixed error where check_ajax_referer was not defined.
