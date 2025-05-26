@@ -4,7 +4,7 @@ namespace WCGL;
 
 class Admin {
     public function __construct() {
-        add_action( 'admin_menu', [ $this, 'add_menu_page' ] );
+        add_action( 'admin_menu', [ $this, 'add_admin_page' ] );
     }
 
     public function add_admin_page() {
