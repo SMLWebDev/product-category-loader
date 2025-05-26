@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Woo Category Grid Loader
  * Description: Displays WooCommerce product categories in a grid with a Load More button. Includes a shortcode and admin settings.
- * Version: 1.1.5
+ * Version: 0.1.0-beta
  * Author: Simon Lowe
  * Author URI: https://smlwebdevelopment.co.uk
  * Plugin URI: https://github.com/SMLWebDev/woo-category-grid-loader
