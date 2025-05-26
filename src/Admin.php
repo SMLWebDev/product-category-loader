@@ -4,6 +4,7 @@ namespace WCGL;
 
 class Admin {
     public function __construct() {
+        error_log( 'Admin class initialized' );
         add_action( 'admin_menu', [ $this, 'add_admin_page' ] );
     }
 
@@ -11,7 +12,7 @@ class Admin {
         add_menu_page(
             'Category Grid Loader',
             'Category Grid Loader',
-            'manage options',
+            'manage_options',
             'wcgl-main',
             [ $this, 'render_admin_page' ],
             'dashicons-grid-view',
@@ -26,11 +27,11 @@ class Admin {
             <p>Welcome to the Category Grid Loader plugin settings page.</p>
 
             <h2>Shortcode Usage</h2>
-            <code>[woo_category_grid per_page="6" columns="3"]</code>
+            Add the following to your page to display the grid layout: <code>[woo_category_grid per_page="6" columns="3"]</code>
             <p>
-                <strong>Parameters:</strong>
+                <strong>Parameters:</strong><br>
                 <code>per_page</code> - Number of categories to disaplay per page (default: 6)<br>
-                <code>columns</code> - Number of columns to display (default: 3)
+                <code>columns</code> - Number of columns to display (default: 3, min: 1, max: 6)
             </p>
 
             <p><a href="https://github.com/SMLWebDev/woo-category-grid-loader/blob/main/ROADMAP.md" target="_blank">View plugin roadmap</a></p>
