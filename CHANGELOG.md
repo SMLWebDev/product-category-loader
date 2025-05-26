@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.5] - 26-05-2025
+## Fix
+- Updated Plugin.php class name to Plugin
+- Update the id in frontend.css to reflect the correct name used
+- Updated the styles for the grid layout and button positioning
+- Updated Admin.php to show the admin section in backend
+
+---
+
 ## [1.1.4] - 23-05-2025
 ## Fix
 - Added missing script to the end of Ajax.php
