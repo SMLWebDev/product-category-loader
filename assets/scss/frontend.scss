@@ -1,6 +1,6 @@
-#wcgl-grid {
+#wcgl-category-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1rem;
 }
 
@@ -15,19 +15,43 @@
         background: #f9f9f9;
         cursor: pointer;
     }
-}
 
-#wcgl-load-more {
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
-    display: inline-block;
-    background: #0073aa;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
+    &__image-container {
+        border: 1px solid #000;
+        border-radius: 2rem;
+        height: 250px;
+    }
 
-    &:hover {
-        background: #005f8d;
+    &__image {
+        height: 100%;
+        border-radius: inherit;
+    }
+
+    &__title {
+        letter-spacing: 5%;
+        font-weight: 400;
     }
 }
+
+.wcgl-button-container {
+    display: flex;
+    justify-content: center;
+
+    #wcgl-load-more {
+        margin-top: 1rem;
+        padding: 0.75rem 1.5rem;
+        display: inline-block;
+        background: transparent;
+        color: #000;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+        font-size: 1.6rem;
+
+        &:hover {
+            text-decoration-thickness: 0.1rem;
+        }
+    }
+
+}
+

@@ -7,30 +7,33 @@ class Admin {
         add_action( 'admin_menu', [ $this, 'add_menu_page' ] );
     }
 
-    public function add_menu_page() {
-        add_submenu_page(
-            'options-general.php',
-            __('Woo Category Grid Loader', 'woo-category-grid-loader'),
-            __('Category Grid Loader', 'woo-category-grid-loader'),
-            'manage_options',
-            'wcgl-settings',
-            [ $this, 'render_settings_page' ]
+    public function add_admin_page() {
+        add_menu_page(
+            'Category Grid Loader',
+            'Category Grid Loader',
+            'manage options',
+            'wcgl-main',
+            [ $this, 'render_admin_page' ],
+            'dashicons-grid-view',
+            56
         );
     }
 
-    public function render_settings_page() {
+    public function render_admin_page() {
         ?>
         <div class="wrap">
-            <h1><?php esc_html_e('Woo Category Grid Loader', 'woo-category-grid-loader'); ?></h1>
-            <p><?php esc_html_e('Use the shortcode below to embed a grid of WooCommercer categories.', 'woo-category-grid-loader'); ?></p>
+            <h1>Woo Category Grid Loader</h1>
+            <p>Welcome to the Category Grid Loader plugin settings page.</p>
 
+            <h2>Shortcode Usage</h2>
             <code>[woo_category_grid per_page="6" columns="3"]</code>
+            <p>
+                <strong>Parameters:</strong>
+                <code>per_page</code> - Number of categories to disaplay per page (default: 6)<br>
+                <code>columns</code> - Number of columns to display (default: 3)
+            </p>
 
-            <h3><?php esc_html_e('Shortcode Attributes', 'woo-category-grid-loader'); ?></h3>
-            <ul>
-                <li><strong>per_page</strong>: <?php esc_html_e('Number of categories to load per page. Default is 6.', 'woo-category-grid-loader'); ?></li>
-                <li><strong>columns</strong>: <?php esc_html_e('Number of columns in the grid. Default is 3.', 'woo-category-grid-loader'); ?></li>
-            </ul>
+            <p><a href="https://github.com/SMLWebDev/woo-category-grid-loader/blob/main/ROADMAP.md" target="_blank">View plugin roadmap</a></p>
         </div>
         <?php
     }
