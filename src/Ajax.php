@@ -42,8 +42,10 @@ class Ajax {
 
             <div class="wcgl-category">
                 <a href="<?= esc_url( $link ) ?>">
-                    <img src="<?= esc_url( $image ) ?>" alt="<?= esc_attr( $category->name ) ?>">
-                    <h3><?= esc_html( $category->name ) ?></h3>
+                    <div class="wcgl-category__image-container">
+                        <img src="<?= esc_url( $image ) ?>" alt="<?= esc_attr( $category->name ) ?>" class="wcgl-category__image" loading="lazy">
+                    </div>
+                    <h3 class="wcgl-category__title"><?= esc_html( $category->name ) ?></h3>
                 </a>
             </div>
 

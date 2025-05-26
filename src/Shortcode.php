@@ -20,7 +20,9 @@ class Shortcode {
             <!-- Categories will load here via JS -->
         </div>
 
-        <button id="wcgl-load-more" class="wcgl-load-more"><?php esc_html_e('Load More...', 'woo-category-grid-loader'); ?></button>
+        <div class="wcgl-button-container">
+            <button id="wcgl-load-more" class="wcgl-load-more">Load More...</button>
+        </div>
 
         <script>
             window.WCGL_DATA = {
