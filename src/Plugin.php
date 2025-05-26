@@ -2,7 +2,7 @@
 
 namespace WCGL;
 
-class plugin {
+class Plugin {
     public function run() {
         $this->load_dependencies();
         $this->init_hooks();
