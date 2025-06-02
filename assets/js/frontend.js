@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let page = parseInt(grid.dataset.page, 10);
     const perPage = parseInt(grid.dataset.perPage, 10);
+    const orderby = grid.dataset.orderby || 'name';
+    const order = grid.dataset.order || 'ASC';
 
     const loadCategories = () => {
         const formData = new FormData();
@@ -13,6 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('nonce', WCGL_DATA.nonce);
         formData.append('page', page);
         formData.append('per_page', perPage);
+        formData.append('orderby', orderby);
+        formData.append('order', order);
 
         loadMore.disabled = true;
         loadMore.textContent = 'Loading...';

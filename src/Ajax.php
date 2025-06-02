@@ -16,11 +16,13 @@ class Ajax {
 
         $page = isset($_POST['page']) ? absint($_POST['page']) : 1;
         $per_page = isset($_POST['per_page']) ? absint($_POST['per_page']) : 6;
+        $orderby = isset($_POST['orderby']) ? sanitize_text_field($_POST['orderby']) : 'name';
+        $order = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'ASC';
 
         $args = [
             'taxonomy'      => 'product_cat',
-            'orderby'       => 'name',
-            'order'         => 'ASC',
+            'orderby'       => $orderby,
+            'order'         => $order,
             'hide_empty'    => false,
             'number'        => $per_page,
             'offset'        => ($page - 1) * $per_page,
