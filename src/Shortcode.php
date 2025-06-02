@@ -11,12 +11,20 @@ class Shortcode {
         $atts = shortcode_atts([
             'per_page'  => 6,
             'columns'   => 3,
+            'orderby'   => 'name',
+            'order'     => 'ASC'
         ], $atts);
 
         ob_start();
         ?>
 
-        <div id="wcgl-category-grid" class="wcgl-grid columns-<?= esc_attr( $atts['columns'] ) ?>" data-per-page="<?= esc_attr( $atts['per_page'] ) ?>" data-page="1">
+        <div id="wcgl-category-grid" 
+            class="wcgl-grid columns-<?= esc_attr( $atts['columns'] ) ?>" 
+            data-per-page="<?= esc_attr( $atts['per_page'] ) ?>" 
+            data-page="1"
+            data-orderby="<?= esc_attr( $atts['orderby'] ) ?>"
+            data-order="<?= esc_attr( $atts['order'] ) ?>"
+            >
             <!-- Categories will load here via JS -->
         </div>
 
