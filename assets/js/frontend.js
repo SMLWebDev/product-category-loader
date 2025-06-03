@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const perPage = parseInt(grid.dataset.perPage, 10);
     const orderby = grid.dataset.orderby || 'name';
     const order = grid.dataset.order || 'ASC';
+    const layout = grid.dataset.layout || 'grid';
 
     const loadCategories = () => {
         const formData = new FormData();
@@ -17,6 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('per_page', perPage);
         formData.append('orderby', orderby);
         formData.append('order', order);
+        formData.append('layout', layout);
+
 
         loadMore.disabled = true;
         loadMore.textContent = 'Loading...';

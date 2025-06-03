@@ -18,6 +18,7 @@ class Ajax {
         $per_page = isset($_POST['per_page']) ? absint($_POST['per_page']) : 6;
         $orderby = isset($_POST['orderby']) ? sanitize_text_field($_POST['orderby']) : 'name';
         $order = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'ASC';
+        $layout = isset($_POST['layout']) ? sanitize_file_name($_POST['layout']) : 'grid';
 
         $args = [
             'taxonomy'      => 'product_cat',
@@ -26,6 +27,7 @@ class Ajax {
             'hide_empty'    => false,
             'number'        => $per_page,
             'offset'        => ($page - 1) * $per_page,
+            'layout'        => $layout,
         ];
 
         $categories = get_terms( $args );
@@ -37,21 +39,9 @@ class Ajax {
         ob_start();
 
         foreach ( $categories as $category ) :
-            $thumb_id = get_term_meta( $category->term_id, 'thumbnail_id', true );
-            $image = $thumb_id ? wp_get_attachment_url( $thumb_id ) : ( function_exists( 'wc_placeholder_img_src' ) ? wc_placeholder_img_src() : '' );
-            $link = get_term_link($category);
-            ?>
+            
+            include WCGL_PLUGIN_DIR . '../templates/partials/category-item.php';
 
-            <div class="wcgl-category">
-                <a href="<?= esc_url( $link ) ?>">
-                    <div class="wcgl-category__image-container">
-                        <img src="<?= esc_url( $image ) ?>" alt="<?= esc_attr( $category->name ) ?>" class="wcgl-category__image" loading="lazy">
-                    </div>
-                    <h3 class="wcgl-category__title"><?= esc_html( $category->name ) ?></h3>
-                </a>
-            </div>
-
-            <?php
         endforeach;
 
         $html = ob_get_clean();

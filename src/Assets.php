@@ -12,12 +12,32 @@ class Assets {
     }
 
     public function enqueue_frontend_assets() {
+        $layout = get_option( 'wcgl_default_layout', 'grid' );
+
+        if ( $layout === 'card' ) {
+            wp_enqueue_style(
+                'wcgl-card-style',
+                plugin_dir_url('assets/css/card-layout.css', __FILE__ ),
+                [],
+                WCGL_VERSION
+            );
+        } else {
+            wp_enqueue_style(
+                'wcgl-grid-style',
+                plugin_dir_url('assets/css/grid-layout.css', __FILE__ ),
+                [],
+                WCGL_VERSION
+            );
+        }
+
         wp_enqueue_style(
-            'wcgl-frontend',
-            WCGL_PLUGIN_URL . 'assets/css/frontend.css',
+            'wcgl-base-styles',
+            plugin_dir_url('assets/css/base.css', __FILE__ ),
             [],
             WCGL_VERSION
         );
+
+        
 
         wp_enqueue_script(
             'wcgl-frontend',

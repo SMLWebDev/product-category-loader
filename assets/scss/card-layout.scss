@@ -1,0 +1,37 @@
+/* card-layout.scss */
+@use 'base';
+
+.wcgl-card-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+
+  .wcgl-category {
+    width: calc(100% / 1 - 1rem);
+
+    &__image-container {
+      aspect-ratio: 3 / 2;
+    }
+  }
+
+  &.columns-2 .wcgl-category {
+    width: calc(50% - 1rem);
+  }
+
+  &.columns-3 .wcgl-category {
+    width: calc(33.333% - 1rem);
+  }
+
+  &.columns-4 .wcgl-category {
+    width: calc(25% - 1rem);
+  }
+
+  &.columns-5 .wcgl-category {
+    width: calc(20% - 1rem);
+  }
+
+  &.columns-6 .wcgl-category {
+    width: calc(16.666% - 1rem);
+  }
+}

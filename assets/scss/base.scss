@@ -1,0 +1,58 @@
+.wcgl-category {
+    text-align: center;
+    padding: 1rem;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    background-color: #fff;
+    transition: transform 0.3s;
+
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    &__image-container {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        border-radius: 6px;
+        margin-bottom: 0.5rem;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__title {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    &:hover {
+        transform: translateY(-4px);
+    }
+}
+
+.wcgl-button-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.wcgl-load-more {
+    background-color: #0073aa;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+        background-color: #005f8d;
+    }
+}
