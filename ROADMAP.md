@@ -24,7 +24,7 @@ A lightweight plugin to display WooCommerce product categories in a grid with AJ
 - [x] GitHub Versioning
   - Semantic versioning using `npm version`
   - Release tags with changelogs
-- [ ] Shortcode Generator:
+- [x] Shortcode Generator:
   - Form UI that builds a shortcode with live preview
   - Copy shortcode to clipboard
 
