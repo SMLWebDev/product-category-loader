@@ -6,7 +6,8 @@ use function PHPSTORM_META\map;
 
 class Assets {
     public function register() {
-        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_frontend_assets' ] );
+        add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_frontend_assets' ], 1000 );
+        add_action( 'enqueue_block_editor_styles', [ $this, 'enqueue_frontend_assets' ], 1000 );
         add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_admin_assets' ] );
     }
 

@@ -68,8 +68,9 @@
   border-radius: 2rem;
   height: 250px;
 }
-.wcgl-category__image {
+.wcgl-category img {
   height: 100%;
+  width: 100%;
   border-radius: inherit;
   filter: brightness(85%);
 }
