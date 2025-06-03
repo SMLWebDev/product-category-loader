@@ -39,6 +39,7 @@ Enhancements and quality-of-life improvements post-initial release.
 - [ ] Styling tweaks and accessibility enhancements
 - [ ] Better error handling in AJAX responses
 - [ ] Optional infinite scroll as alternative to "Load More"
+- [ ] Additional layout option for free version
 
 ---
 
