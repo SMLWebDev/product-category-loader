@@ -6,8 +6,8 @@
     "scripts": {
         "version": "npm run version-update && git add composer.json woo-category-grid-loader.php",
         "version-update": "node scripts/version-update.js",
-        "build": "sass assets/scss/frontend.scss assets/css/frontend.css --no-source-map --style=compressed",
-        "dev": "sass assets/scss/frontend.scss assets/css/frontend.css --watch"
+        "build": "sass assets/scss/frontend.scss:assets/css/frontend.css assets/scss/admin.scss:assets/css/admin.css --no-source-map --style=compressed",
+        "dev": "sass assets/scss/frontend.scss:assets/css/frontend.css assets/scss/admin.scss:assets/css/admin.css --watch"
     },
     "author": "Simon Lowe",
     "license": "MIT",

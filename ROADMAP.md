@@ -24,6 +24,9 @@ A lightweight plugin to display WooCommerce product categories in a grid with AJ
 - [x] GitHub Versioning
   - Semantic versioning using `npm version`
   - Release tags with changelogs
+- [ ] Shortcode Generator:
+  - Form UI that builds a shortcode with live preview
+  - Copy shortcode to clipboard
 
 ---
 
@@ -54,10 +57,6 @@ A premium add-on with advanced customization features, layout options, and admin
 - [ ] Layout presets: Card, Minimal, Shadow
 - [ ] Toggle rounded corners, hover effects, image aspect ratios
 - [ ] Custom color pickers and spacing controls
-
-### Shortcode Generator
-- [ ] Form UI that builds a shortcode with live preview
-- [ ] Copy shortcode to clipboard
 
 ### Additional Features
 - [ ] Masonry or grid layout toggle

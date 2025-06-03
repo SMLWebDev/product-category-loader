@@ -1,3 +1,16 @@
+/**
+  * Admin styles for the WooCommerce Category Grid Layout plugin.
+  * This file contains styles for the admin section in the WordPress backend.
+  */
+.wcgl_shortcode_options {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+  * Frontend styles for the WooCommerce Category Grid Layout plugin.
+  * This file contains styles for the category grid layout and responsive design.
+  */
 #wcgl-category-grid {
   display: grid;
   gap: 1rem;
