@@ -2,81 +2,28 @@
   * Frontend styles for the WooCommerce Category Grid Layout plugin.
   * This file contains styles for the category grid layout and responsive design.
   */
-.wcgl-category {
-  text-align: center;
-  padding: 1rem;
-  border: 1px solid #eaeaea;
-  border-radius: 8px;
-  background-color: #fff;
-  transition: transform 0.3s;
-}
-.wcgl-category__link {
-  text-decoration: none;
-  color: inherit;
-  display: block;
-}
-.wcgl-category__image-container {
-  width: 100%;
-  aspect-ratio: 1/1;
-  overflow: hidden;
-  border-radius: 6px;
-  margin-bottom: 0.5rem;
-}
-.wcgl-category__image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-.wcgl-category__title {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-.wcgl-category:hover {
-  transform: translateY(-4px);
-}
-
-.wcgl-button-container {
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.wcgl-load-more {
-  background-color: #0073aa;
-  color: #fff;
-  border: none;
-  padding: 0.75rem 2rem;
-  font-size: 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-.wcgl-load-more:hover {
-  background-color: #005f8d;
-}
-
-#wcgl-grid {
+.wcgl-grid {
   display: grid;
   gap: 1rem;
   width: 100%;
   grid-template-columns: repeat(1, 1fr);
 }
-#wcgl-grid.columns-1 {
+.wcgl-grid.columns-1 {
   grid-template-columns: repeat(1, 1fr);
 }
-#wcgl-grid.columns-2 {
+.wcgl-grid.columns-2 {
   grid-template-columns: repeat(2, 1fr);
 }
-#wcgl-grid.columns-3 {
+.wcgl-grid.columns-3 {
   grid-template-columns: repeat(3, 1fr);
 }
-#wcgl-grid.columns-4 {
+.wcgl-grid.columns-4 {
   grid-template-columns: repeat(4, 1fr);
 }
-#wcgl-grid.columns-5 {
+.wcgl-grid.columns-5 {
   grid-template-columns: repeat(5, 1fr);
 }
-#wcgl-grid.columns-6 {
+.wcgl-grid.columns-6 {
   grid-template-columns: repeat(6, 1fr);
 }
 

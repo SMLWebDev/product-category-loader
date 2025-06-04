@@ -5,8 +5,8 @@
  */
 ?>
 
-<div id="wcgl-category-grid" 
-            class="wcgl-grid wcgl-grid--columns-<?= esc_attr( $atts['columns'] ) ?>" 
+<div id="wcgl-category-grid wcgl-categories" 
+            class="wcgl-categories wcgl-grid columns-<?= esc_attr( $atts['columns'] ) ?>" 
             data-per-page="<?= esc_attr( $atts['per_page'] ) ?>" 
             data-page="1"
             data-orderby="<?= esc_attr( $atts['orderby'] ) ?>"

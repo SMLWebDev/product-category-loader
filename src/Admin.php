@@ -4,8 +4,8 @@ namespace WCGL;
 
 class Admin {
     public function __construct() {
-        error_log( 'Admin class initialized' );
         add_action( 'admin_menu', [ $this, 'add_admin_page' ] );
+        add_action( 'admin_init', [ $this, 'register_settings' ] );
     }
 
     public function add_admin_page() {
@@ -18,6 +18,10 @@ class Admin {
             'dashicons-grid-view',
             56
         );
+    }
+
+    public function register_settings() {
+        register_setting( 'wcgl_settings_group', 'wcgl_default_layout' );
     }
 
     public function render_admin_page() {
@@ -40,7 +44,8 @@ class Admin {
             <p>Use the options below to create your shortcode:</p>
 
             <div class="wcgl_shortcode_options">
-                <form id="wcgl_generator">
+                <form id="wcgl_generator" class="wcgl_generator" action="options.php">
+                    <?php settings_fields('wcgl_settings_group'); ?>
                     <table class="form-table">
                         <tr>
                             <th><label for="wcgl_per_page">Products per page:</label></th>
@@ -71,6 +76,15 @@ class Admin {
                                     endforeach;
                                 ?>
                             </select></td>
+                        </tr>
+                        <tr>
+                            <th><label for="wcgl_layout_option">Choose your layout:</label></th>
+                            <td>
+                                <select name="wcgl_layout_option" id="wcgl_layout_option">
+                                    <option value="grid" <?php selected( get_option( 'wcgl_default_layout' ), 'grid' ) ?>>Grid</option>
+                                    <option value="card" <?php selected( get_option( 'wcgl_default_layout' ), 'card' ) ?>>card</option>
+                                </select>
+                            </td>
                         </tr>
                     </table>
                 </form>

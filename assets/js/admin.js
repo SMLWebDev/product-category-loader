@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     const columns = document.getElementById('wcgl_columns').value || 3
                     const order = document.getElementById('wcgl_order').value || 'ASC'
                     const orderby = document.getElementById('wcgl_orderby').value || 'name'
+                    const layout = document.getElementById('wcgl_layout_option').value || 'grid'
 
-                    output.value = `[woo_category_grid per_page='${perPage}' columns='${columns}' orderby='${orderby}' order='${order}']`
+                    output.value = `[woo_category_grid per_page='${perPage}' columns='${columns}' orderby='${orderby}' order='${order}' layout='${layout}']`
                 };
 
                 inputs.forEach(input => {
@@ -21,8 +22,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 button.addEventListener('click', function() {
                     output.select()
-                    document.execCommand('copy')
-                    button.textContent = 'Copied!'
+                    if (navigator.clipboard && window.isSecureContext) {
+                        navigator.clipboard.writeText(output.value).then(() => {
+                            button.textContent = 'Copied!';
+                        }).catch(err => {
+                            console.error('Clipboard copy failed:', err);
+                        });
+                    } else {
+                        // Fallback method for insecure context or unsupported browsers
+                        output.select();
+                        document.execCommand('copy');
+                        button.textContent = 'Copied!';
+                    }
                     setTimeout(() => {
                         button.textContent = 'Copy Shortcode'
                     }, 5000)

@@ -2,10 +2,7 @@
   * Frontend styles for the WooCommerce Category Grid Layout plugin.
   * This file contains styles for the category grid layout and responsive design.
   */
-
-@use 'base';
-
-#wcgl-grid {
+.wcgl-grid {
     display: grid;
     gap: 1rem;
     width: 100%;

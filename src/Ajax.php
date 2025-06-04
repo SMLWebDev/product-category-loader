@@ -18,7 +18,6 @@ class Ajax {
         $per_page = isset($_POST['per_page']) ? absint($_POST['per_page']) : 6;
         $orderby = isset($_POST['orderby']) ? sanitize_text_field($_POST['orderby']) : 'name';
         $order = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'ASC';
-        $layout = isset($_POST['layout']) ? sanitize_file_name($_POST['layout']) : 'grid';
 
         $args = [
             'taxonomy'      => 'product_cat',
@@ -27,7 +26,6 @@ class Ajax {
             'hide_empty'    => false,
             'number'        => $per_page,
             'offset'        => ($page - 1) * $per_page,
-            'layout'        => $layout,
         ];
 
         $categories = get_terms( $args );
@@ -36,11 +34,18 @@ class Ajax {
             wp_send_json_error();
         }
 
+        $layout = isset($_POST['layout']) ? sanitize_text_field($_POST['layout']) : 'grid';
+
+        error_log('WCGL Ajax Layout: ' . $layout);
+
         ob_start();
 
         foreach ( $categories as $category ) :
-            
-            include WCGL_PLUGIN_DIR . '../templates/partials/category-item.php';
+            try {
+                include WCGL_PLUGIN_DIR . 'templates/partials/category-item.php';
+            } catch (\Exception $e) {
+                error_log('Error loading category item: ' . $e->getMessage());
+            }
 
         endforeach;
 

@@ -5,8 +5,9 @@
  */
 ?>
 
+
 <div id="wcgl-category-card" 
-    class="wcgl-card columns-<?= esc_attr( $atts['columns'] ) ?>" 
+    class="wcgl-categories wcgl-card-layout columns-<?= esc_attr( $atts['columns'] ) ?>" 
     data-per-page="<?= esc_attr( $atts['per_page'] ) ?>" 
     data-page="1"
     data-orderby="<?= esc_attr( $atts['orderby'] ) ?>"

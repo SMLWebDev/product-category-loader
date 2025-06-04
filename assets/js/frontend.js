@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const grid = document.getElementById('wcgl-category-grid');
+    const container = document.querySelector('.wcgl-categories');
     const loadMore = document.getElementById('wcgl-load-more');
 
-    if (!grid || !loadMore) return;
+    if (!container || !loadMore) return;
 
-    let page = parseInt(grid.dataset.page, 10);
-    const perPage = parseInt(grid.dataset.perPage, 10);
-    const orderby = grid.dataset.orderby || 'name';
-    const order = grid.dataset.order || 'ASC';
-    const layout = grid.dataset.layout || 'grid';
+    let page = parseInt(container.dataset.page, 10);
+    const perPage = parseInt(container.dataset.perPage, 10);
+    const orderby = container.dataset.orderby || 'name';
+    const order = container.dataset.order || 'ASC';
+    const layout = container.dataset.layout || 'grid';
 
     const loadCategories = () => {
         const formData = new FormData();
@@ -38,10 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Separate category grid and has_more
                 const categories = temp.querySelectorAll('.wcgl-category');
-                categories.forEach(cat => grid.appendChild(cat));
+                categories.forEach(cat => container.appendChild(cat));
 
                 page++;
-                grid.dataset.page = page;
+                container.dataset.page = page;
 
                 if (!has_more) {
                     loadMore.style.display = 'none';

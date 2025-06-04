@@ -6,9 +6,13 @@
  * @var string $layout
  */
 
+ if (!isset($layout)) {
+    $layout = 'grid';
+ }
+
  $thumb_id = get_term_meta( $category->term_id, 'thumbnail_id', true );
- $image = $thumg_id ? wp_get_attachment_url( $thumb_id ) : ( function_exists('wc_placeholder_img_src') ? wc_placeholder_img_src() : '');
- $link = get_term_meta( $category );
+ $image = $thumb_id ? wp_get_attachment_url( $thumb_id ) : ( function_exists('wc_placeholder_img_src') ? wc_placeholder_img_src() : '');
+ $link = get_term_link( $category );
  ?>
 
  <div class="wcgl-category wcgl-category--<?= esc_attr($layout) ?>">
