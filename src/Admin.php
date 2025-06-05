@@ -38,8 +38,25 @@ class Admin {
 
         ?>
         <div class="wcgl-admin-page">
-            <h1 class="wcgl-admin-page__title">Woo Category Grid Loader</h1>
-            <p>Welcome to the Category Grid Loader plugin settings page.</p>
+            <div class="wcgl-admin-page__title--background">
+                <h1 class="wcgl-admin-page__title">Woo Category Grid Loader</h1>
+            </div>
+
+            <div class="wcgl-admin-page__how-to-use">
+                <h4>How to use:</h4>
+
+                <div class="wcgl-admin-page__how-to-use--steps">
+                    <p>Copy Shortcode</p>
+                    <input type="text" value="[woo_category_grid]" class="wcgl-admin-page__how-to-use--input" readonly>
+                    <button class="btn wcgl_shortcode_copy">Copy Shortcode</button>
+                </div>
+
+                <div class="wcgl-admin-page__how-to-use--steps">
+                    <p>Code snippet</p>
+                </div>
+            </div>
+
+
 
             <p>Use the options below to create your shortcode:</p>
 
