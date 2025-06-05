@@ -12,12 +12,13 @@ class Assets {
     }
 
     public function enqueue_frontend_assets() {
+        
         wp_enqueue_style(
-            'wcgl-frontend',
-            WCGL_PLUGIN_URL . 'assets/css/frontend.css',
+            'wcgl-base-styles',
+            WCGL_PLUGIN_URL . 'assets/css/base.css',
             [],
             WCGL_VERSION
-        );
+        );        
 
         wp_enqueue_script(
             'wcgl-frontend',

@@ -34,24 +34,19 @@ class Ajax {
             wp_send_json_error();
         }
 
+        $layout = isset($_POST['layout']) ? sanitize_text_field($_POST['layout']) : 'grid';
+
+        error_log('WCGL Ajax Layout: ' . $layout);
+
         ob_start();
 
         foreach ( $categories as $category ) :
-            $thumb_id = get_term_meta( $category->term_id, 'thumbnail_id', true );
-            $image = $thumb_id ? wp_get_attachment_url( $thumb_id ) : ( function_exists( 'wc_placeholder_img_src' ) ? wc_placeholder_img_src() : '' );
-            $link = get_term_link($category);
-            ?>
+            try {
+                include WCGL_PLUGIN_DIR . 'templates/partials/category-item.php';
+            } catch (\Exception $e) {
+                error_log('Error loading category item: ' . $e->getMessage());
+            }
 
-            <div class="wcgl-category">
-                <a href="<?= esc_url( $link ) ?>">
-                    <div class="wcgl-category__image-container">
-                        <img src="<?= esc_url( $image ) ?>" alt="<?= esc_attr( $category->name ) ?>" class="wcgl-category__image" loading="lazy">
-                    </div>
-                    <h3 class="wcgl-category__title"><?= esc_html( $category->name ) ?></h3>
-                </a>
-            </div>
-
-            <?php
         endforeach;
 
         $html = ob_get_clean();
