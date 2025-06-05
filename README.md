@@ -44,7 +44,7 @@ Use the `[woo_category_grid]` shortcode anywhere on a page or post
 ### Example
 
 ```php
-[woo_category_grid columns="3" per_page="6" class="columns-3" orderby="name" order="ASC"]
+[woo_category_grid columns="3" per_page="6" class="columns-3" orderby="name" order="ASC" layout="grid"]
 ```
 
 ### Attributes:
@@ -54,6 +54,7 @@ Use the `[woo_category_grid]` shortcode anywhere on a page or post
 | per_page  | int    | 6       | Categories to load each time
 | orderby   | string | name    | How you want the category list to be ordered by
 | order     | string | ASC     | Which order you want the categories to show
+| layout    | string | grid    | Allows you to pick between different layouts
 | class     | string | ''      | Optional extra CSS class for the wrapper
 
 ---
