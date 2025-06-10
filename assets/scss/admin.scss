@@ -1,50 +1,163 @@
-/**
-  * Admin styles for the WooCommerce Category Grid Layout plugin.
-  * This file contains styles for the admin section in the WordPress backend.
-  */
+@use 'sass:color';
 
-.wcgl_shortcode_options {
-    display: flex;
-    flex-direction: column;
-}
+// colors
+$wcgl-bg: #F5EFFF;
+$wcgl-section-bg: #E5D9F2;
+$wcgl-accent: #A594F9;
+$wcgl-border: #CDC1FF;
+$wcgl-text: #333;
 
 .wcgl-admin-page {
+  background: $wcgl-bg;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: $wcgl-text;
 
-  width: 50%;
-  padding: 1rem;
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
 
-
-  &__title {
-    font-weight: 700;
-    text-decoration: underline;
-    color: #fff;
-
-    &--background {
-      background: #5F43B2;
-      background: radial-gradient(circle, rgba(95, 67, 178, 1) 50%, rgba(58, 49, 83, 1) 100%);
-      width: 100%;
-      height: 2rem;
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 0.5rem;
+    .wcgl-admin-page__title {
+      font-size: 2rem;
+      color: $wcgl-accent;
+      margin-bottom: 1rem;
     }
   }
 
-  &__shortcode {
-    width: 100%;
+  &__shortcode-panel {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+
+    .wcgl-card {
+      background: $wcgl-section-bg;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid $wcgl-border;
+      flex: 1;
+      max-width: 400px;
+
+      strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: $wcgl-accent;
+      }
+
+      code {
+        background: rgba(0,0,0,0.05);
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+        display: inline-block;
+        margin-top: 0.5rem;
+      }
+    }
   }
-}
 
-.wcgl_generate {
-  margin-right: 0.8rem;
-}
+  .wcgl-generator {
+    background: $wcgl-section-bg;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid $wcgl-border;
 
-button {
-  margin-top: 1rem;
+    &__title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
 
-  &:hover {
-    cursor: pointer;
+    &__row {
+      margin-bottom: 1.5rem;
+
+      label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: $wcgl-text;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid $wcgl-border;
+        border-radius: 0.5rem;
+        font-size: 1rem;
+        max-width: 300px;
+        background: white;
+      }
+
+      select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A594F9'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 1.25rem;
+        padding-right: 2.5rem;
+        cursor: pointer;
+        
+        // Remove default arrow in IE
+        &::-ms-expand {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .wcgl-generator-output {
+    background: $wcgl-section-bg;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid $wcgl-border;
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: $wcgl-text;
+    }
+
+    &__input {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid $wcgl-border;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      background: white;
+    }
+
+    button {
+      background: $wcgl-accent;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-right: 1rem;
+
+      &:hover {
+        background: color.adjust($wcgl-accent, $lightness: 10%);
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  a {
+    color: $wcgl-accent;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

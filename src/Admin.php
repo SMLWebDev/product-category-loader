@@ -5,7 +5,6 @@ namespace WCGL;
 class Admin {
     public function __construct() {
         add_action( 'admin_menu', [ $this, 'add_admin_page' ] );
-        add_action( 'admin_init', [ $this, 'register_settings' ] );
     }
 
     public function add_admin_page() {
@@ -18,10 +17,6 @@ class Admin {
             'dashicons-grid-view',
             56
         );
-    }
-
-    public function register_settings() {
-        register_setting( 'wcgl_settings_group', 'wcgl_default_layout' );
     }
 
     public function render_admin_page() {
@@ -38,87 +33,76 @@ class Admin {
 
         ?>
         <div class="wcgl-admin-page">
-            <div class="wcgl-admin-page__title--background">
+            <div class="wcgl-admin-page__header">
                 <h1 class="wcgl-admin-page__title">Woo Category Grid Loader</h1>
+
+                <div class="wcgl-admin-page__shortcode-panel">
+                    <div class="wcgl-card">
+                        <strong>Shortcode</strong>
+                        <p>Copy and paste this shortcode into your page:</p>
+                        <code>[woo_category_grid]</code>
+                    </div>
+                    <div class="wcgl-card">
+                        <strong>Template Include</strong>
+                        <p>Copy and paste this snippet into your theme template:</p>
+                        <code>&lt;?php echo do_shortcode('[woo_category_grid]'); ?&gt;</code>
+                    </div>
+                </div>
             </div>
 
-            <div class="wcgl-admin-page__how-to-use">
-                <h4>How to use:</h4>
+            
 
-                <div class="wcgl-admin-page__how-to-use--steps">
-                    <p>Copy Shortcode</p>
-                    <input type="text" value="[woo_category_grid]" class="wcgl-admin-page__how-to-use--input" readonly>
-                    <button class="btn wcgl_shortcode_copy">Copy Shortcode</button>
+            <div class="wcgl-generator">
+                <p class="wcgl-generator__title">Create your own shortcode by using the options below:</p>
+                <div class="wcgl-generator__row">
+                    <label for="wcgl_per_page">Products per page:</label>
+                    <input type="number" id="wcgl_per_page" name="wcgl_per_page" value="6" min="1" max="100" />
                 </div>
 
-                <div class="wcgl-admin-page__how-to-use--steps">
-                    <p>Code snippet</p>
+                <div class="wcgl-generator__row">
+                    <label for="wcgl_columns">Columns:</label>
+                    <input type="number" id="wcgl_columns" name="wcgl_columns" value="3" min="1" max="6" />
                 </div>
-            </div>
 
+                <div class="wcgl-generator__row">
+                    <label for="wcgl_order">Order:</label>
+                    <select name="wcgl_order" id="wcgl_order">
+                        <option value="ASC" selected>Ascending</option>
+                        <option value="DESC">Descending</option>
+                    </select>
+                </div>
 
-
-            <p>Use the options below to create your shortcode:</p>
-
-            <div class="wcgl_shortcode_options">
-                <form id="wcgl_generator" class="wcgl_generator" action="options.php">
-                    <?php settings_fields('wcgl_settings_group'); ?>
-                    <table class="form-table">
-                        <tr>
-                            <th><label for="wcgl_per_page">Products per page:</label></th>
-                            <td><input type="number" id="wcgl_per_page" name="wcgl_per_page" value="6" min="1" max="100" /></td>
-                        </tr>
-
-                        <tr>
-                            <th><label for="wcgl_columns">Columns:</label></th>
-                            <td><input type="number" id="wcgl_columns" name="wcgl_columns" value="3" min="1" max="6" /></td>
-                        </tr>
-
-                        <tr>
-                            <th><label for="wcgl_order">Order:</label></th>
-                            <td><select name="wcgl_order" id="wcgl_order">
-                                <option value="ASC" selected>Ascending</option>
-                                <option value="DESC">Descending</option>
-                            </select></td>
-                        </tr>
-
-                        <tr>
-                            <th><label for="wcgl_orderby">Order by:</label></th>
-                            <td><select id="wcgl_orderby" name="wcgl_orderby">
-                                <?php 
-                                    foreach ($orderby_options as $value => $label) :
-                                        ?>
-                                        <option value="<?= esc_attr($value) ?>" <?= selected($value, 'none', false) ?>><?= esc_html($label) ?></option>
-                                        <?php
-                                    endforeach;
+                <div class="wcgl-generator__row">
+                    <label for="wcgl_orderby">Order by:</label>
+                    <select id="wcgl_orderby" name="wcgl_orderby">
+                        <?php 
+                            foreach ($orderby_options as $value => $label) :
                                 ?>
-                            </select></td>
-                        </tr>
-                        <tr>
-                            <th><label for="wcgl_layout_option">Choose your layout:</label></th>
-                            <td>
-                                <select name="wcgl_layout_option" id="wcgl_layout_option">
-                                    <option value="grid" <?php selected( get_option( 'wcgl_default_layout' ), 'grid' ) ?>>Grid</option>
-                                    <option value="card" <?php selected( get_option( 'wcgl_default_layout' ), 'card' ) ?>>card</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                </form>
+                                <option value="<?= esc_attr($value) ?>" <?= selected($value, 'none', false) ?>><?= esc_html($label) ?></option>
+                                <?php
+                            endforeach;
+                        ?>
+                    </select>
+                </div>
+
+                <div class="wcgl-generator__row">
+                    <label for="wcgl_layout_option">Choose your layout:</label>
+                    <select name="wcgl_layout_option" id="wcgl_layout_option">
+                        <option value="grid">Grid</option>
+                        <option value="card">Card</option>
+                    </select>
+                </div>
             </div>
 
-            <div class="wcgl_generate_shortcode">
-                <table>
-                    <tr>
-                        <th>Shortcode:</th>
-                        <td><input type="text" class="wcgl-admin-page__shortcode" id="wcgl_shortcode" readonly value="" >
-                        <button class="wcgl_generate">Generate Shortcode</button>
-                        <button class="btn wcgl_shortcode_copy">Copy Shortcode</button></td>
-                    </tr>
-                </table>
+            <div class="wcgl-generator-output">
+                <label for="wcgl_shortcode">Generated Shortcode:</label>
+                <input type="text" class="wcgl-generator-output__input" id="wcgl_shortcode" readonly value="" />
+                <button class="wcgl-generator-output__generate">Generate Shortcode</button>
+                <button class="wcgl-generator-output__copy">Copy Shortcode</button>
             </div>
 
             <p><a href="https://github.com/SMLWebDev/woo-category-grid-loader/blob/main/ROADMAP.md" target="_blank">View plugin roadmap</a></p>
+            <p>See any issues or want to request a feature, you can do so by clicking <a href="https://github.com/SMLWebDev/woo-category-grid-loader/issues" target="_blank">here</a></p>
             <p>Plugin built and maintained by <a href="https://smlwebdevelopment.co.uk" target="_blank">SML Web Development</a>.</p>
         </div>
         <?php

@@ -1,45 +1,134 @@
-/**
-  * Admin styles for the WooCommerce Category Grid Layout plugin.
-  * This file contains styles for the admin section in the WordPress backend.
-  */
-.wcgl_shortcode_options {
-  display: flex;
-  flex-direction: column;
-}
-
 .wcgl-admin-page {
-  width: 50%;
-  padding: 1rem;
-}
-.wcgl-admin-page__title {
-  font-weight: 700;
-  text-decoration: underline;
-  color: #fff;
-}
-.wcgl-admin-page__title--background {
-  background: #5F43B2;
-  background: radial-gradient(circle, rgb(95, 67, 178) 50%, rgb(58, 49, 83) 100%);
-  width: 100%;
-  height: 2rem;
+  background: #F5EFFF;
   padding: 2rem;
+  border-radius: 1rem;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+}
+.wcgl-admin-page__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.wcgl-admin-page__header .wcgl-admin-page__title {
+  font-size: 2rem;
+  color: #A594F9;
+  margin-bottom: 1rem;
+}
+.wcgl-admin-page__shortcode-panel {
   display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
   justify-content: center;
-  align-items: center;
-  border-radius: 0.5rem;
 }
-.wcgl-admin-page__shortcode {
+.wcgl-admin-page__shortcode-panel .wcgl-card {
+  background: #E5D9F2;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #CDC1FF;
+  flex: 1;
+  max-width: 400px;
+}
+.wcgl-admin-page__shortcode-panel .wcgl-card strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #A594F9;
+}
+.wcgl-admin-page__shortcode-panel .wcgl-card code {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+.wcgl-admin-page .wcgl-generator {
+  background: #E5D9F2;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #CDC1FF;
+}
+.wcgl-admin-page .wcgl-generator__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.wcgl-admin-page .wcgl-generator__row {
+  margin-bottom: 1.5rem;
+}
+.wcgl-admin-page .wcgl-generator__row label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.wcgl-admin-page .wcgl-generator__row input,
+.wcgl-admin-page .wcgl-generator__row select {
   width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #CDC1FF;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  max-width: 300px;
+  background: white;
 }
-
-.wcgl_generate {
-  margin-right: 0.8rem;
-}
-
-button {
-  margin-top: 1rem;
-}
-button:hover {
+.wcgl-admin-page .wcgl-generator__row select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A594F9'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+  padding-right: 2.5rem;
   cursor: pointer;
+}
+.wcgl-admin-page .wcgl-generator__row select::-ms-expand {
+  display: none;
+}
+.wcgl-admin-page .wcgl-generator-output {
+  background: #E5D9F2;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #CDC1FF;
+}
+.wcgl-admin-page .wcgl-generator-output label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.wcgl-admin-page .wcgl-generator-output__input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #CDC1FF;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background: white;
+}
+.wcgl-admin-page .wcgl-generator-output button {
+  background: #A594F9;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-right: 1rem;
+}
+.wcgl-admin-page .wcgl-generator-output button:hover {
+  background: rgb(205.6194690265, 196.2920353982, 251.7079646018);
+}
+.wcgl-admin-page .wcgl-generator-output button:last-child {
+  margin-right: 0;
+}
+.wcgl-admin-page a {
+  color: #A594F9;
+  text-decoration: none;
+}
+.wcgl-admin-page a:hover {
+  text-decoration: underline;
 }
 
 /*# sourceMappingURL=admin.css.map */
