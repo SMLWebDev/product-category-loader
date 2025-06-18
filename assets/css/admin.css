@@ -60,7 +60,7 @@
   margin-bottom: 0.5rem;
   color: #333;
 }
-.wcgl-admin-page .wcgl-generator__row input,
+.wcgl-admin-page .wcgl-generator__row input:not([type=checkbox]),
 .wcgl-admin-page .wcgl-generator__row select {
   width: 100%;
   padding: 0.5rem;

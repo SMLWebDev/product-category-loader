@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const perPage = parseInt(container.dataset.perPage, 10);
     const orderby = container.dataset.orderby || 'name';
     const order = container.dataset.order || 'ASC';
+    const hideEmpty = container.dataset.hide_empty === 'true';
     const layout = container.dataset.layout || 'grid';
 
     const loadCategories = () => {
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formData.append('per_page', perPage);
         formData.append('orderby', orderby);
         formData.append('order', order);
+        formData.append('hide_empty', hideEmpty ? '1' : '0');
         formData.append('layout', layout);
 
 

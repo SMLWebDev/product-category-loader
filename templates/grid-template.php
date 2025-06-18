@@ -11,6 +11,7 @@
             data-page="1"
             data-orderby="<?= esc_attr( $atts['orderby'] ) ?>"
             data-order="<?= esc_attr( $atts['order'] ) ?>"
+            data-hide_empty="<?= $atts['hide_empty'] ? 'true' : 'false' ?>"
             data-layout="<?= esc_attr( $atts['layout'] ) ?>"
             >
             <!-- Categories will load here via JS -->

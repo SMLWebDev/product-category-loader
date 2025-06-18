@@ -9,12 +9,17 @@ class Shortcode {
 
     public function render_shortcode( $atts ) {
         $atts = shortcode_atts([
-            'per_page'  => 6,
-            'columns'   => 3,
-            'orderby'   => 'name',
-            'order'     => 'ASC',
-            'layout'    => 'grid'
+            'per_page'      => 6,
+            'columns'       => 3,
+            'orderby'       => 'name',
+            'order'         => 'ASC',
+            'hide_empty'    => true,
+            'layout'        => 'grid'
         ], $atts);
+
+        if (is_string($atts['hide_empty'])) {
+            $atts['hide_empty'] = filter_var($atts['hide_empty'], FILTER_VALIDATE_BOOLEAN);
+        }
 
         $layout = $atts['layout'];
 
