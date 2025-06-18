@@ -18,12 +18,17 @@ class Ajax {
         $per_page = isset($_POST['per_page']) ? absint($_POST['per_page']) : 6;
         $orderby = isset($_POST['orderby']) ? sanitize_text_field($_POST['orderby']) : 'name';
         $order = isset($_POST['order']) ? sanitize_text_field($_POST['order']) : 'ASC';
+        $hide_empty = false;
+        if (isset($_POST['hide_empty'])) {
+            $value = strtolower($_POST['hide_empty']);
+            $hide_empty = in_array($value, ['1', 'true', 'yes']);
+        }
 
         $args = [
             'taxonomy'      => 'product_cat',
             'orderby'       => $orderby,
             'order'         => $order,
-            'hide_empty'    => false,
+            'hide_empty'    => $hide_empty,
             'number'        => $per_page,
             'offset'        => ($page - 1) * $per_page,
         ];
@@ -51,7 +56,7 @@ class Ajax {
 
         $html = ob_get_clean();
 
-        $total_categories = wp_count_terms('product_cat', ['hide_empty' => false]);
+        $total_categories = wp_count_terms('product_cat', ['hide_empty' => $hide_empty]);
         $has_more = ($page * $per_page) < $total_categories;
 
         wp_send_json_success([

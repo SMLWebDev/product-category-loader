@@ -30,6 +30,7 @@ class Admin {
             'include'     => 'Include',
             'none'        => 'None',
         ];
+        
 
         ?>
         <div class="wcgl-admin-page">
@@ -83,6 +84,11 @@ class Admin {
                             endforeach;
                         ?>
                     </select>
+                </div>
+
+                <div class="wcgl-generator__row">
+                    <label for="wcgl_hide_empty">Hide Empty Categories</label>
+                    <input type="checkbox" id="wcgl_hide_empty" name="wcgl_hide_empty" value="1" checked />
                 </div>
 
                 <div class="wcgl-generator__row">
