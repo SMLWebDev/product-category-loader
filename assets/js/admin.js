@@ -10,9 +10,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const columns = document.getElementById('wcgl_columns').value || 3;
         const order = document.getElementById('wcgl_order').value || 'ASC';
         const orderby = document.getElementById('wcgl_orderby').value || 'name';
+        const hideEmpty = document.getElementById('wcgl_hide_empty').checked ? 'true' : 'false';
         const layout = document.getElementById('wcgl_layout_option').value || 'grid';
 
-        output.value = `[woo_category_grid per_page='${perPage}' columns='${columns}' orderby='${orderby}' order='${order}' layout='${layout}']`;
+        output.value = `[woo_category_grid per_page='${perPage}' columns='${columns}' orderby='${orderby}' order='${order}' hide_empty='${hideEmpty}' layout='${layout}']`;
     };
 
     // Add event listeners to all inputs and selects
