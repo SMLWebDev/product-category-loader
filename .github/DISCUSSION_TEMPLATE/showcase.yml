@@ -18,14 +18,10 @@ body:
       render: markdown
   
   # Image Upload Section
-  - type: markdown
+  - type: textarea
     attributes:
-      value: |
-        **Screenshots**
-        > Drag & drop images directly into this text box
-        
-        **Before/After Comparison:**
-        - Left: Original | Right: Your Version
+      label: "Upload screenshot"
+      placeholder: "Upload your image by copy and pasting into this text box"
   
   - type: textarea
     id: technical-details
