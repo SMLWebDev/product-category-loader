@@ -1,23 +1,49 @@
-title: "Showcase: [Project Name]"
+title: "Showcase: [Your Project Name]"
 labels: ["showcase"]
 body:
   - type: textarea
     id: url
     attributes:
       label: "Live Site URL"
-      placeholder: "https://"
+      placeholder: "https://your-site.com"
+      description: "Link to your live implementation"
+  
   - type: textarea
     id: customizations
     attributes:
       label: "Customizations"
       placeholder: |
-        - Modified: [Template Name]
-        - Added: [Custom CSS/JS]
+        - Modified templates: [list files]
+        - Added CSS/JS: [describe changes]
+      render: markdown
+  
+  # Image Upload Section
   - type: markdown
     attributes:
-      value: "**Before/After Screenshots**"
+      value: |
+        **Screenshots**
+        > Drag & drop images directly into this text box
+        
+        **Before/After Comparison:**
+        - Left: Original | Right: Your Version
+  
   - type: textarea
-    id: code
+    id: technical-details
     attributes:
-      label: "Code Snippets (Optional)"
+      label: "Technical Details (Optional)"
+      placeholder: |
+        ```php
+        // Custom code snippets
+        add_filter('wcl_grid_args', function($args) {
+          return $args;
+        });
+        ```
       render: php
+  
+  - type: checkboxes
+    id: permissions
+    attributes:
+      label: "Permissions"
+      options:
+        - label: "I allow my site to be featured in plugin demos"
+        - label: "I consent to being contacted about this implementation"
