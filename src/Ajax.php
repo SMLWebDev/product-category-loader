@@ -1,6 +1,6 @@
 <?php
 
-namespace WCGL;
+namespace WCL;
 
 class Ajax {
     public function register() {
@@ -12,7 +12,7 @@ class Ajax {
         if ( ! function_exists( 'check_ajax_referer' ) ) {
             require_once ABSPATH . 'wp-includes/pluggable.php';
         }
-        check_ajax_referer( 'wcgl_nonce', 'nonce' );
+        check_ajax_referer( 'wcl_nonce', 'nonce' );
 
         $page = isset($_POST['page']) ? absint($_POST['page']) : 1;
         $per_page = isset($_POST['per_page']) ? absint($_POST['per_page']) : 6;
@@ -41,13 +41,13 @@ class Ajax {
 
         $layout = isset($_POST['layout']) ? sanitize_text_field($_POST['layout']) : 'grid';
 
-        error_log('WCGL Ajax Layout: ' . $layout);
+        error_log('WCL Ajax Layout: ' . $layout);
 
         ob_start();
 
         foreach ( $categories as $category ) :
             try {
-                include WCGL_PLUGIN_DIR . 'templates/partials/category-item.php';
+                include WCL_PLUGIN_DIR . 'templates/partials/category-item.php';
             } catch (\Exception $e) {
                 error_log('Error loading category item: ' . $e->getMessage());
             }

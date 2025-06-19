@@ -1,10 +1,10 @@
-.wcgl-card-layout {
+.wcl-card-layout {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: center;
 
-  .wcgl-category {
+  .wcl-category {
     flex: 0 1 100%;
     min-width: 250px;
     position: relative;
@@ -36,23 +36,23 @@
     }
   }
 
-  &.columns-2 .wcgl-category {
+  &.columns-2 .wcl-category {
     flex: 0 1 calc(50% - 1rem);
   }
 
-  &.columns-3 .wcgl-category {
+  &.columns-3 .wcl-category {
     flex: 0 1 calc(33.333% - 1rem);
   }
 
-  &.columns-4 .wcgl-category {
+  &.columns-4 .wcl-category {
     flex: 0 1 calc(25% - 1rem);
   }
 
-  &.columns-5 .wcgl-category {
+  &.columns-5 .wcl-category {
     flex: 0 1 calc(20% - 1rem);
   }
 
-  &.columns-6 .wcgl-category {
+  &.columns-6 .wcl-category {
     flex: 0 1 calc(16.666% - 1rem);
   }
 }

@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WCGL\\' => array($baseDir . '/src'),
+    'WCL\\' => array($baseDir . '/src'),
 );

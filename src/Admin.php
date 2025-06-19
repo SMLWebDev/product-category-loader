@@ -1,6 +1,6 @@
 <?php
 
-namespace WCGL;
+namespace WCL;
 
 class Admin {
     public function __construct() {
@@ -9,10 +9,10 @@ class Admin {
 
     public function add_admin_page() {
         add_menu_page(
-            'Category Grid Loader',
-            'Category Grid Loader',
+            'Category Loader',
+            'Category Loader',
             'manage_options',
-            'wcgl-main',
+            'wcl-main',
             [ $this, 'render_admin_page' ],
             'dashicons-grid-view',
             56
@@ -33,49 +33,49 @@ class Admin {
         
 
         ?>
-        <div class="wcgl-admin-page">
-            <div class="wcgl-admin-page__header">
-                <h1 class="wcgl-admin-page__title">Woo Category Grid Loader</h1>
+        <div class="wcl-admin-page">
+            <div class="wcl-admin-page__header">
+                <h1 class="wcl-admin-page__title">Woo Category Loader</h1>
 
-                <div class="wcgl-admin-page__shortcode-panel">
-                    <div class="wcgl-card">
+                <div class="wcl-admin-page__shortcode-panel">
+                    <div class="wcl-card">
                         <strong>Shortcode</strong>
                         <p>Copy and paste this shortcode into your page:</p>
-                        <code>[woo_category_grid]</code>
+                        <code>[woo_category_loader]</code>
                     </div>
-                    <div class="wcgl-card">
+                    <div class="wcl-card">
                         <strong>Template Include</strong>
                         <p>Copy and paste this snippet into your theme template:</p>
-                        <code>&lt;?php echo do_shortcode('[woo_category_grid]'); ?&gt;</code>
+                        <code>&lt;?php echo do_shortcode('[woo_category_loader]'); ?&gt;</code>
                     </div>
                 </div>
             </div>
 
             
 
-            <div class="wcgl-generator">
-                <p class="wcgl-generator__title">Create your own shortcode by using the options below:</p>
-                <div class="wcgl-generator__row">
-                    <label for="wcgl_per_page">Products per page:</label>
-                    <input type="number" id="wcgl_per_page" name="wcgl_per_page" value="6" min="1" max="100" />
+            <div class="wcl-generator">
+                <p class="wcl-generator__title">Create your own shortcode by using the options below:</p>
+                <div class="wcl-generator__row">
+                    <label for="wcl_per_page">Products per page:</label>
+                    <input type="number" id="wcl_per_page" name="wcl_per_page" value="6" min="1" max="100" />
                 </div>
 
-                <div class="wcgl-generator__row">
-                    <label for="wcgl_columns">Columns:</label>
-                    <input type="number" id="wcgl_columns" name="wcgl_columns" value="3" min="1" max="6" />
+                <div class="wcl-generator__row">
+                    <label for="wcl_columns">Columns:</label>
+                    <input type="number" id="wcl_columns" name="wcl_columns" value="3" min="1" max="6" />
                 </div>
 
-                <div class="wcgl-generator__row">
-                    <label for="wcgl_order">Order:</label>
-                    <select name="wcgl_order" id="wcgl_order">
+                <div class="wcl-generator__row">
+                    <label for="wcl_order">Order:</label>
+                    <select name="wcl_order" id="wcl_order">
                         <option value="ASC" selected>Ascending</option>
                         <option value="DESC">Descending</option>
                     </select>
                 </div>
 
-                <div class="wcgl-generator__row">
-                    <label for="wcgl_orderby">Order by:</label>
-                    <select id="wcgl_orderby" name="wcgl_orderby">
+                <div class="wcl-generator__row">
+                    <label for="wcl_orderby">Order by:</label>
+                    <select id="wcl_orderby" name="wcl_orderby">
                         <?php 
                             foreach ($orderby_options as $value => $label) :
                                 ?>
@@ -86,25 +86,25 @@ class Admin {
                     </select>
                 </div>
 
-                <div class="wcgl-generator__row">
-                    <label for="wcgl_hide_empty">Hide Empty Categories</label>
-                    <input type="checkbox" id="wcgl_hide_empty" name="wcgl_hide_empty" value="1" checked />
+                <div class="wcl-generator__row">
+                    <label for="wcl_hide_empty">Hide Empty Categories</label>
+                    <input type="checkbox" id="wcl_hide_empty" name="wcl_hide_empty" value="1" checked />
                 </div>
 
-                <div class="wcgl-generator__row">
-                    <label for="wcgl_layout_option">Choose your layout:</label>
-                    <select name="wcgl_layout_option" id="wcgl_layout_option">
+                <div class="wcl-generator__row">
+                    <label for="wcl_layout_option">Choose your layout:</label>
+                    <select name="wcl_layout_option" id="wcl_layout_option">
                         <option value="grid">Grid</option>
                         <option value="card">Card</option>
                     </select>
                 </div>
             </div>
 
-            <div class="wcgl-generator-output">
-                <label for="wcgl_shortcode">Generated Shortcode:</label>
-                <input type="text" class="wcgl-generator-output__input" id="wcgl_shortcode" readonly value="" />
-                <button class="wcgl-generator-output__generate">Generate Shortcode</button>
-                <button class="wcgl-generator-output__copy">Copy Shortcode</button>
+            <div class="wcl-generator-output">
+                <label for="wcl_shortcode">Generated Shortcode:</label>
+                <input type="text" class="wcl-generator-output__input" id="wcl_shortcode" readonly value="" />
+                <button class="wcl-generator-output__generate">Generate Shortcode</button>
+                <button class="wcl-generator-output__copy">Copy Shortcode</button>
             </div>
 
             <p><a href="https://github.com/SMLWebDev/woo-category-grid-loader/blob/main/ROADMAP.md" target="_blank">View plugin roadmap</a></p>

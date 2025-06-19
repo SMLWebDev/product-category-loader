@@ -15,11 +15,11 @@
  $link = get_term_link( $category );
  ?>
 
- <div class="wcgl-category wcgl-category--<?= esc_attr($layout) ?>">
+ <div class="wcl-category wcl-category--<?= esc_attr($layout) ?>">
     <a href="<?= esc_url($link) ?>">
-        <div class="wcgl-category__image-container">
-            <img src="<?= esc_url($image) ?>" alt="<?= esc_attr($category->name) ?>" class="wcgl-category__image" loading="lazy">
+        <div class="wcl-category__image-container">
+            <img src="<?= esc_url($image) ?>" alt="<?= esc_attr($category->name) ?>" class="wcl-category__image" loading="lazy">
         </div>
-        <h3 class="wcgl-category__title"><?= esc_html($category->name) ?></h3>
+        <h3 class="wcl-category__title"><?= esc_html($category->name) ?></h3>
     </a>
  </div>

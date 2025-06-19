@@ -1,6 +1,6 @@
 {
-  "name": "smlwebdev/woo-category-grid-loader",
-  "description": "A WordPress plugin to display WooCommerce categories in a grid layout with Load More support.",
+  "name": "smlwebdev/woo-category-loader",
+  "description": "A WordPress plugin to display WooCommerce categories.",
   "type": "wordpress-plugin",
   "license": "MIT",
   "version": "0.1.0-beta.2",
@@ -13,10 +13,10 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "WCGL\\": "src/"
+      "WCL\\": "src/"
     }
   },
   "extra": {
-    "installer-name": "woo-category-grid-loader"
+    "installer-name": "woo-category-loader"
   }
 }

@@ -1,6 +1,6 @@
-# Woo Category Grid Loader
+# Woo Category Loader
 
-A Lightweight, customisable WordPress plugin to display WooCommerce Product Categories in a responsive Grid Layout with pagination.
+A Lightweight, customisable WordPress plugin to display WooCommerce Product Categories in a responsive Layout with pagination.
 
 ## 🧩 Features
 

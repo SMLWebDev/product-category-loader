@@ -2,7 +2,7 @@
   * Frontend styles for the WooCommerce Category Grid Layout plugin.
   * This file contains styles for the category grid layout and responsive design.
   */
-.wcgl-grid {
+.wcl-grid {
     display: grid;
     gap: 1rem;
     width: 100%;
@@ -36,25 +36,25 @@
 
 
 @media screen and (max-width: 1440px) {
-  .wcgl-grid.columns-6 {
+  .wcl-grid.columns-6 {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media screen and (max-width: 1080px) {
-  .wcgl-grid.columns-1, .wcgl-grid.columns-2, .wcgl-grid.columns-3, .wcgl-grid.columns-4, .wcgl-grid.columns-5, .wcgl-grid.columns-6 {
+  .wcl-grid.columns-1, .wcl-grid.columns-2, .wcl-grid.columns-3, .wcl-grid.columns-4, .wcl-grid.columns-5, .wcl-grid.columns-6 {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media screen and (max-width: 768px) {
-  .wcgl-grid.columns-1, .wcgl-grid.columns-2, .wcgl-grid.columns-3, .wcgl-grid.columns-4, .wcgl-grid.columns-5, .wcgl-grid.columns-6 {
+  .wcl-grid.columns-1, .wcl-grid.columns-2, .wcl-grid.columns-3, .wcl-grid.columns-4, .wcl-grid.columns-5, .wcl-grid.columns-6 {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media screen and (max-width: 480px) {
-  .wcgl-grid.columns-1, .wcgl-grid.columns-2, .wcgl-grid.columns-3, .wcgl-grid.columns-4, .wcgl-grid.columns-5, .wcgl-grid.columns-6 {
+  .wcl-grid.columns-1, .wcl-grid.columns-2, .wcl-grid.columns-3, .wcl-grid.columns-4, .wcl-grid.columns-5, .wcl-grid.columns-6 {
     grid-template-columns: repeat(1, 1fr);
   }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace WCGL;
+namespace WCL;
 
 class Plugin {
     public function run() {
@@ -9,10 +9,10 @@ class Plugin {
     }
 
     private function load_dependencies() {
-        require_once WCGL_PLUGIN_DIR . 'src/Shortcode.php';
-        require_once WCGL_PLUGIN_DIR . 'src/Assets.php';
-        require_once WCGL_PLUGIN_DIR . 'src/Ajax.php';
-        require_once WCGL_PLUGIN_DIR . 'src/Admin.php';
+        require_once WCL_PLUGIN_DIR . 'src/Shortcode.php';
+        require_once WCL_PLUGIN_DIR . 'src/Assets.php';
+        require_once WCL_PLUGIN_DIR . 'src/Ajax.php';
+        require_once WCL_PLUGIN_DIR . 'src/Admin.php';
     }
 
     private function init_hooks() {
