@@ -1,21 +1,7 @@
+# Schema: https://docs.github.com/en/discussions/managing-discussions-for-your-community/configuring-discussion-templates-for-your-repository
 categories:
-  - id: question
-    emoji: ":question:"
-    name: Q&A
-    description: Get help with configuration and troubleshooting
-  - id: showcase
-    emoji: ":art:"
-    name: Showcase
-    description: Share your implementations
-  - id: ideas
-    emoji: ":bulb:"
-    name: Ideas
-    description: Suggest new features
-  - id: news
-    emoji: ":loudspeaker:"
-    name: Announcements
-    description: Official plugin updates
-  - id: integrations
-    emoji: ":electric_plug:"
-    name: Plugins & Themes
-    description: Compatibility reports
+  - "Q&A"
+  - "Showcase"
+  - "Ideas"
+  - "Announcements"
+  - "Plugins & Themes"
