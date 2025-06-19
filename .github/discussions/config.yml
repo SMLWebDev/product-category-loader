@@ -1,8 +1,0 @@
-# GitHub Discussions Template Config
-# Schema: https://docs.github.com/en/discussions/managing-discussions-for-your-community/configuring-discussion-templates-for-your-repository
-categories:
-  - "Q&A"
-  - "Showcase"
-  - "Ideas"
-  - "Announcements"
-  - "Plugins & Themes"
