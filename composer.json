@@ -3,7 +3,7 @@
   "description": "A WordPress plugin to display WooCommerce categories.",
   "type": "wordpress-plugin",
   "license": "MIT",
-  "version": "0.1.0-beta.2",
+  "version": "1.0.0",
   "authors": [
     {
       "name": "Simon Lowe",
