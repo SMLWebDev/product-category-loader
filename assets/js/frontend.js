@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.wcgl-categories');
-    const loadMore = document.getElementById('wcgl-load-more');
+    const container = document.querySelector('.wcl-categories');
+    const loadMore = document.getElementById('wcl-load-more');
 
     if (!container || !loadMore) return;
 
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const loadCategories = () => {
         const formData = new FormData();
         formData.append('action', 'load_product_categories');
-        formData.append('nonce', WCGL_DATA.nonce);
+        formData.append('nonce', WCL_DATA.nonce);
         formData.append('page', page);
         formData.append('per_page', perPage);
         formData.append('orderby', orderby);
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         loadMore.disabled = true;
         loadMore.textContent = 'Loading...';
 
-        fetch(WCGL_DATA.ajax_url, {
+        fetch(WCL_DATA.ajax_url, {
             method: 'POST',
             body: formData,
         })
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 temp.innerHTML = html;
 
                 // Separate category grid and has_more
-                const categories = temp.querySelectorAll('.wcgl-category');
+                const categories = temp.querySelectorAll('.wcl-category');
                 categories.forEach(cat => container.appendChild(cat));
 
                 page++;

@@ -1,10 +1,10 @@
 {
-    "name": "woo-category-grid-loader",
+    "name": "woo-category--loader",
     "version": "0.1.0-beta.2",
-    "description": "WooCommerce Category Grid Loader WordPress Plugin",
+    "description": "WooCommerce Category Loader WordPress Plugin",
     "main": "index.js",
     "scripts": {
-        "version": "npm run version-update && git add composer.json woo-category-grid-loader.php",
+        "version": "npm run version-update && git add composer.json woo-category-loader.php",
         "version-update": "node scripts/version-update.js",
         "build": "sass assets/scss/base.scss:assets/css/base.css assets/scss/grid-layout.scss:assets/css/grid-layout.css assets/scss/admin.scss:assets/css/admin.css assets/scss/card-layout.scss:assets/css/card-layout.css --no-source-map --style=compressed",
         "dev": "sass assets/scss/base.scss:assets/css/base.css assets/scss/grid-layout.scss:assets/css/grid-layout.css assets/scss/admin.scss:assets/css/admin.css assets/scss/card-layout.scss:assets/css/card-layout.css --watch"

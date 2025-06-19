@@ -1,6 +1,6 @@
 <?php
 
-namespace WCGL;
+namespace WCL;
 
 use function PHPSTORM_META\map;
 
@@ -14,48 +14,48 @@ class Assets {
     public function enqueue_frontend_assets() {
         
         wp_enqueue_style(
-            'wcgl-base-styles',
-            WCGL_PLUGIN_URL . 'assets/css/base.css',
+            'wcl-base-styles',
+            WCL_PLUGIN_URL . 'assets/css/base.css',
             [],
-            WCGL_VERSION
+            WCL_VERSION
         );        
 
         wp_enqueue_script(
-            'wcgl-frontend',
-            WCGL_PLUGIN_URL . 'assets/js/frontend.js',
+            'wcl-frontend',
+            WCL_PLUGIN_URL . 'assets/js/frontend.js',
             ['jquery'],
-            WCGL_VERSION,
+            WCL_VERSION,
             true
         );
 
-        wp_localize_script( 'wcgl-frontend', 'wcgl_ajax', [
+        wp_localize_script( 'wcl-frontend', 'wcl_ajax', [
             'ajax_url'  => admin_url('admin-ajax.php'),
-            'nonce'     => wp_create_nonce('wcgl_nonce'),
+            'nonce'     => wp_create_nonce('wcl_nonce'),
         ] );
 
-        wp_localize_script( 'wcgl-frontend', 'wcgl_settings', [
+        wp_localize_script( 'wcl-frontend', 'wcl_settings', [
             'per_page'  => 6,
         ] );
     }
 
     public function enqueue_admin_assets($hook_suffix) {
 
-        if ($hook_suffix !== 'toplevel_page_wcgl-main') {
+        if ($hook_suffix !== 'toplevel_page_wcl-main') {
             return;
         }
 
         wp_enqueue_style(
-            'wcgl-admin',
-            WCGL_PLUGIN_URL . 'assets/css/admin.css',
+            'wcl-admin',
+            WCL_PLUGIN_URL . 'assets/css/admin.css',
             [],
-            WCGL_VERSION
+            WCL_VERSION
         );
 
         wp_enqueue_script(
-            'wcgl-admin',
-            WCGL_PLUGIN_URL . 'assets/js/admin.js',
+            'wcl-admin',
+            WCL_PLUGIN_URL . 'assets/js/admin.js',
             ['jquery'],
-            WCGL_VERSION,
+            WCL_VERSION,
             true
         );
     }

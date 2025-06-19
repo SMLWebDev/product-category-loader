@@ -9,12 +9,12 @@ class ComposerStaticInitdb9d8f7358292bee04cb9267f8686509
     public static $prefixLengthsPsr4 = array (
         'W' => 
         array (
-            'WCGL\\' => 5,
+            'WCL\\' => 5,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WCGL\\' => 
+        'WCL\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),

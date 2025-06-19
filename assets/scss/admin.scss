@@ -1,26 +1,26 @@
 @use 'sass:color';
 
 // colors
-$wcgl-bg: #F5EFFF;
-$wcgl-section-bg: #E5D9F2;
-$wcgl-accent: #A594F9;
-$wcgl-border: #CDC1FF;
-$wcgl-text: #333;
+$wcl-bg: #F5EFFF;
+$wcl-section-bg: #E5D9F2;
+$wcl-accent: #A594F9;
+$wcl-border: #CDC1FF;
+$wcl-text: #333;
 
-.wcgl-admin-page {
-  background: $wcgl-bg;
+.wcl-admin-page {
+  background: $wcl-bg;
   padding: 2rem;
   border-radius: 1rem;
   font-family: 'Segoe UI', sans-serif;
-  color: $wcgl-text;
+  color: $wcl-text;
 
   &__header {
     text-align: center;
     margin-bottom: 2rem;
 
-    .wcgl-admin-page__title {
+    .wcl-admin-page__title {
       font-size: 2rem;
-      color: $wcgl-accent;
+      color: $wcl-accent;
       margin-bottom: 1rem;
     }
   }
@@ -31,18 +31,18 @@ $wcgl-text: #333;
     margin-bottom: 2rem;
     justify-content: center;
 
-    .wcgl-card {
-      background: $wcgl-section-bg;
+    .wcl-card {
+      background: $wcl-section-bg;
       padding: 1.5rem;
       border-radius: 0.75rem;
-      border: 1px solid $wcgl-border;
+      border: 1px solid $wcl-border;
       flex: 1;
       max-width: 400px;
 
       strong {
         display: block;
         margin-bottom: 0.5rem;
-        color: $wcgl-accent;
+        color: $wcl-accent;
       }
 
       code {
@@ -55,12 +55,12 @@ $wcgl-text: #333;
     }
   }
 
-  .wcgl-generator {
-    background: $wcgl-section-bg;
+  .wcl-generator {
+    background: $wcl-section-bg;
     padding: 1.5rem;
     margin-bottom: 2rem;
     border-radius: 0.75rem;
-    border: 1px solid $wcgl-border;
+    border: 1px solid $wcl-border;
 
     &__title {
       font-size: 1.2rem;
@@ -74,14 +74,14 @@ $wcgl-text: #333;
         display: block;
         font-weight: 600;
         margin-bottom: 0.5rem;
-        color: $wcgl-text;
+        color: $wcl-text;
       }
 
       input:not([type=checkbox]),
       select {
         width: 100%;
         padding: 0.5rem;
-        border: 1px solid $wcgl-border;
+        border: 1px solid $wcl-border;
         border-radius: 0.5rem;
         font-size: 1rem;
         max-width: 300px;
@@ -107,24 +107,24 @@ $wcgl-text: #333;
     }
   }
 
-  .wcgl-generator-output {
-    background: $wcgl-section-bg;
+  .wcl-generator-output {
+    background: $wcl-section-bg;
     padding: 1.5rem;
     margin-bottom: 2rem;
     border-radius: 0.75rem;
-    border: 1px solid $wcgl-border;
+    border: 1px solid $wcl-border;
 
     label {
       display: block;
       font-weight: 600;
       margin-bottom: 0.5rem;
-      color: $wcgl-text;
+      color: $wcl-text;
     }
 
     &__input {
       width: 100%;
       padding: 0.75rem;
-      border: 1px solid $wcgl-border;
+      border: 1px solid $wcl-border;
       border-radius: 0.5rem;
       font-size: 1rem;
       margin-bottom: 1rem;
@@ -132,7 +132,7 @@ $wcgl-text: #333;
     }
 
     button {
-      background: $wcgl-accent;
+      background: $wcl-accent;
       color: white;
       padding: 0.75rem 1.5rem;
       font-size: 1rem;
@@ -143,7 +143,7 @@ $wcgl-text: #333;
       margin-right: 1rem;
 
       &:hover {
-        background: color.adjust($wcgl-accent, $lightness: 10%);
+        background: color.adjust($wcl-accent, $lightness: 10%);
       }
 
       &:last-child {
@@ -153,7 +153,7 @@ $wcgl-text: #333;
   }
 
   a {
-    color: $wcgl-accent;
+    color: $wcl-accent;
     text-decoration: none;
 
     &:hover {
