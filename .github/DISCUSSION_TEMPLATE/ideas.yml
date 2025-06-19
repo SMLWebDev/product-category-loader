@@ -1,0 +1,25 @@
+title: "[Feature] Brief Description"
+labels: ["ideas"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem this solves"
+      placeholder: "I'm frustrated when..."
+  - type: textarea
+    id: solution
+    attributes:
+      label: "Proposed solution"
+      placeholder: "It would help if..."
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives considered"
+      placeholder: "I tried..."
+  - type: checkboxes
+    id: voting
+    attributes:
+      label: "Vote Support"
+      options:
+        - label: "👍 I need this"
+        - label: "💡 Nice-to-have"

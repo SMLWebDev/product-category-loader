@@ -1,14 +1,23 @@
-title: "Showcase: [Brief Description]"
+title: "Showcase: [Project Name]"
 labels: ["showcase"]
 body:
   - type: textarea
     id: url
     attributes:
-      label: "Website URL"
+      label: "Live Site URL"
+      placeholder: "https://"
   - type: textarea
     id: customizations
     attributes:
-      label: "Customizations Made"
+      label: "Customizations"
+      placeholder: |
+        - Modified: [Template Name]
+        - Added: [Custom CSS/JS]
   - type: markdown
     attributes:
-      value: "**Screenshots:**"
+      value: "**Before/After Screenshots**"
+  - type: textarea
+    id: code
+    attributes:
+      label: "Code Snippets (Optional)"
+      render: php

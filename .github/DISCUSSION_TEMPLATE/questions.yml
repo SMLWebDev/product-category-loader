@@ -1,0 +1,35 @@
+title: "Q: [Summarize your issue]"
+labels: ["question"]
+body:
+  - type: checkboxes
+    id: prerequisites
+    attributes:
+      label: "Before asking"
+      options:
+        - label: "Searched existing discussions"
+          required: true
+        - label: "Checked WordPress.org FAQ"
+        - label: "Disabled other plugins for testing"
+  - type: dropdown
+    id: wp-version
+    attributes:
+      label: "WordPress Version"
+      options:
+        - "6.5+"
+        - "6.0-6.4"
+        - "Older"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: "Steps to reproduce"
+      placeholder: "1. Install plugin\n2. Add shortcode..."
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected behavior"
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Actual behavior"

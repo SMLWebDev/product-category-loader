@@ -1,0 +1,31 @@
+title: "Compatibility: [Plugin/Theme Name]"
+labels: ["integrations"]
+body:
+  - type: dropdown
+    id: result
+    attributes:
+      label: "Test Result"
+      options:
+        - "✅ Working"
+        - "⚠️ Partial Support"
+        - "❌ Broken"
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: "Test Environment"
+      placeholder: |
+        - Plugin/Theme: [Name] vX.X
+        - WooCommerce: vX.X
+        - PHP: X.X
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Reproduction Steps"
+      placeholder: "1. Install...\n2. Activate..."
+  - type: textarea
+    id: errors
+    attributes:
+      label: "Error Logs"
+      render: log
