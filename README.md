@@ -93,6 +93,18 @@ If you use Composer to manage WordPress:
 
 ---
 
+## Support
+Before reporting issues:
+1. Check the [FAQ](https://wordpress.org/plugins/woo-category-loader/#faq)
+2. Search [WordPress Support](https://wordpress.org/support/plugin/woo-category-loader/)
+3. For confirmed bugs, use [GitHub Issues](https://github.com/your-repo/issues/new?template=bug_report.md)
+
+## 💬 Community Support
+- 🚀 [Showcase your implementation](https://github.com/your-repo/discussions/categories/showcase)
+- 💡 [Ask configuration questions](https://github.com/your-repo/discussions/categories/q-a)
+
+---
+
 ## 📄 Licence
 
 The MIT License (MIT) [text](https://rem.mit-license.org/+MIT)

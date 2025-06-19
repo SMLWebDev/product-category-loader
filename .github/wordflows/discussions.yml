@@ -1,0 +1,20 @@
+name: Discussion Management
+on:
+  discussion:
+    types: [created]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          script: |
+            if (context.payload.discussion.category_id === 'HOW_TO_USE') {
+              github.rest.discussions.createComment({
+                discussion_number: context.payload.discussion.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `📚 Check our docs first: [Configuration Guide](https://your-docs.site)`
+              })
+            }

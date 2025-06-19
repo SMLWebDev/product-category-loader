@@ -5,6 +5,30 @@ namespace WCL;
 class Admin {
     public function __construct() {
         add_action( 'admin_menu', [ $this, 'add_admin_page' ] );
+        add_action( 'admin_init', [ $this, 'add_settings_fields' ] );
+    }
+
+    public function add_settings_fields() {
+        add_settings_field(
+            'wcl_support',
+            __('Need Help?', 'woo-category-loader'),
+            function() {
+                echo '
+                <div class="wcl-support-links">
+                    <p><a href="https://wordpress.org/support/plugin/woo-category-loader/" target="_blank">WordPress Support Forum</a></p>
+                    <p><a href="https://github.com/your-repo/issues/new/choose" target="_blank">GitHub Issue Templates</a></p>
+                </div>
+                <style>
+                    .wcl-support-links {
+                        background: #f8f9fa;
+                        padding: 1em;
+                        border-left: 4px solid #3858e9;
+                    }
+                </style>';
+            },
+            'wcl_settings',
+            'wcl_section_support'
+        )
     }
 
     public function add_admin_page() {
@@ -109,6 +133,7 @@ class Admin {
 
             <p><a href="https://github.com/SMLWebDev/woo-category-grid-loader/blob/main/ROADMAP.md" target="_blank">View plugin roadmap</a></p>
             <p>See any issues or want to request a feature, you can do so by clicking <a href="https://github.com/SMLWebDev/woo-category-grid-loader/issues" target="_blank">here</a></p>
+             <p>Join the <a href="https://github.com/SMLWebDev/woo-category-loader/discussions" target="_blank">GitHub Discussions</a> for tips and showcases!</p>
             <p>Plugin built and maintained by <a href="https://smlwebdevelopment.co.uk" target="_blank">SML Web Development</a>.</p>
         </div>
         <?php
