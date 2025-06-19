@@ -21,7 +21,7 @@ A Lightweight, customisable WordPress plugin to display WooCommerce Product Cate
 
 ## 🧾 Shortcode Usage
 
-Use the `[woo_category_grid]` shortcode anywhere on a page or post
+Use the `[woo_category_loader]` shortcode anywhere on a page or post
 
 `columns` - Can use a number of columns between 1-6.<br>
 `per_page` - No limit is set on per_page attribute.<br>
@@ -40,22 +40,25 @@ Use the `[woo_category_grid]` shortcode anywhere on a page or post
 * ‘description‘ - Orders categories based on their descriptions.
 * ‘include‘ - Orders categories based on if they include items.
 
+`hide_empty` - Set to 'true' or 'false' to display empty categories or not.
+
 
 ### Example
 
 ```php
-[woo_category_grid columns="3" per_page="6" class="columns-3" orderby="name" order="ASC" layout="grid"]
+[woo_category_loader columns="3" per_page="6" class="columns-3" orderby="name" order="ASC" hide_empty="false" layout="grid"]
 ```
 
 ### Attributes:
-| Attribute | Type   | Default | Description
-| --------- | ------ | ------- | -----------
-| columns   | int    | 3       | Number of Categories per row
-| per_page  | int    | 6       | Categories to load each time
-| orderby   | string | name    | How you want the category list to be ordered by
-| order     | string | ASC     | Which order you want the categories to show
-| layout    | string | grid    | Allows you to pick between different layouts
-| class     | string | ''      | Optional extra CSS class for the wrapper
+| Attribute  | Type   | Default | Description
+| ---------  | ------ | ------- | -----------
+| columns    | int    | 3       | Number of Categories per row
+| per_page   | int    | 6       | Categories to load each time
+| orderby    | string | name    | How you want the category list to be ordered by
+| order      | string | ASC     | Which order you want the categories to show
+| hide_empty | string | true    | Option to display empty categories or hide them
+| layout     | string | grid    | Allows you to pick between different layouts
+| class      | string | ''      | Optional extra CSS class for the wrapper
 
 ---
 
@@ -76,14 +79,14 @@ If you use Composer to manage WordPress:
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/sml-web-dev/woo-category-grid-loader"
+            "url": "https://github.com/sml-web-dev/woo-category-loader"
         }
     ]
 ```
 
 ##### 2. Require it:
 ```composer
-    composer require sml-web-dev/woo-category-grid-loader
+    composer require sml-web-dev/woo-category-loader
 ```
 
 ##### 3. Activate the plugin in WordPress admin (or automate with WP-CLI if needed).
