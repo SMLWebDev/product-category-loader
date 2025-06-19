@@ -1,0 +1,14 @@
+title: "Showcase: [Brief Description]"
+labels: ["showcase"]
+body:
+  - type: textarea
+    id: url
+    attributes:
+      label: "Website URL"
+  - type: textarea
+    id: customizations
+    attributes:
+      label: "Customizations Made"
+  - type: markdown
+    attributes:
+      value: "**Screenshots:**"
