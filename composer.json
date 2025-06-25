@@ -1,8 +1,8 @@
 {
-  "name": "smlwebdev/woo-category-loader",
+  "name": "smlwebdev/product-category-loader",
   "description": "A WordPress plugin to display WooCommerce categories.",
   "type": "wordpress-plugin",
-  "license": "MIT",
+  "license": "GPLv2 or later",
   "version": "1.0.0",
   "authors": [
     {
@@ -13,10 +13,10 @@
   "require": {},
   "autoload": {
     "psr-4": {
-      "WCL\\": "src/"
+      "PCL\\": "src/"
     }
   },
   "extra": {
-    "installer-name": "woo-category-loader"
+    "installer-name": "product-category-loader"
   }
 }

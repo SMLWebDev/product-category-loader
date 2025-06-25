@@ -1,10 +1,10 @@
 <?php
 
-namespace WCL;
+namespace PCL;
 
 class Shortcode {
     public function register() {
-        add_shortcode( 'woo_category_loader', [ $this, 'render_shortcode' ] );
+        add_shortcode( 'product_category_loader', [ $this, 'render_shortcode' ] );
     }
 
     public function render_shortcode( $atts ) {
@@ -25,34 +25,34 @@ class Shortcode {
 
         if ( $layout === 'card' ) {
             wp_enqueue_style(
-                'wcl-card-style',
-                WCL_PLUGIN_URL . 'assets/css/card-layout.css',
+                'pcl-card-style',
+                PCL_PLUGIN_URL . 'assets/css/card-layout.css',
                 [],
-                WCL_VERSION
+                PCL_VERSION
             );
         } else {
             wp_enqueue_style(
-                'wcl-grid-style',
-                WCL_PLUGIN_URL . 'assets/css/grid-layout.css',
+                'pcl-grid-style',
+                PCL_PLUGIN_URL . 'assets/css/grid-layout.css',
                 [],
-                WCL_VERSION
+                PCL_VERSION
             );
         }
 
         ob_start();
-        echo $this->render_template( $atts );
+        echo wp_kses_post( $this->render_template( $atts ) );
         return ob_get_clean();
     }
 
     public function render_template( $atts ) {
 
         $layout = sanitize_file_name( $atts['layout'] );
-        $template_path = WCL_PLUGIN_DIR . "templates/{$layout}-template.php";
+        $template_path = PCL_PLUGIN_DIR . "templates/{$layout}-template.php";
 
         if ( file_exists( $template_path ) ) {
             include $template_path;
         } else {
-            echo '<p class="wcl-error">Invalid layout specified.</p>';
+            echo '<p class="pcl-error">Invalid layout specified.</p>';
         };
     }
 }

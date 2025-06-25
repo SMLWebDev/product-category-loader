@@ -21,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Initial plugin release with core functionality:
   - Dynamic WooCommerce category loading system
-  - Shortcode implementation (`[woo_category_loader]`)
+  - Shortcode implementation (`[product_category_loader]`)
   - Admin configuration panel with settings for:
     - Items per page
     - Display columns

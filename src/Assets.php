@@ -1,6 +1,6 @@
 <?php
 
-namespace WCL;
+namespace PCL;
 
 use function PHPSTORM_META\map;
 
@@ -14,48 +14,48 @@ class Assets {
     public function enqueue_frontend_assets() {
         
         wp_enqueue_style(
-            'wcl-base-styles',
-            WCL_PLUGIN_URL . 'assets/css/base.css',
+            'pcl-base-styles',
+            PCL_PLUGIN_URL . 'assets/css/base.css',
             [],
-            WCL_VERSION
+            PCL_VERSION
         );        
 
         wp_enqueue_script(
-            'wcl-frontend',
-            WCL_PLUGIN_URL . 'assets/js/frontend.js',
+            'pcl-frontend',
+            PCL_PLUGIN_URL . 'assets/js/frontend.js',
             ['jquery'],
-            WCL_VERSION,
+            PCL_VERSION,
             true
         );
 
-        wp_localize_script( 'wcl-frontend', 'wcl_ajax', [
+        wp_localize_script( 'pcl-frontend', 'pcl_ajax', [
             'ajax_url'  => admin_url('admin-ajax.php'),
-            'nonce'     => wp_create_nonce('wcl_nonce'),
+            'nonce'     => wp_create_nonce('pcl_nonce'),
         ] );
 
-        wp_localize_script( 'wcl-frontend', 'wcl_settings', [
+        wp_localize_script( 'pcl-frontend', 'pcl_settings', [
             'per_page'  => 6,
         ] );
     }
 
     public function enqueue_admin_assets($hook_suffix) {
 
-        if ($hook_suffix !== 'toplevel_page_wcl-main') {
+        if ($hook_suffix !== 'toplevel_page_pcl-main') {
             return;
         }
 
         wp_enqueue_style(
-            'wcl-admin',
-            WCL_PLUGIN_URL . 'assets/css/admin.css',
+            'pcl-admin',
+            PCL_PLUGIN_URL . 'assets/css/admin.css',
             [],
-            WCL_VERSION
+            PCL_VERSION
         );
 
         wp_enqueue_script(
-            'wcl-admin',
-            WCL_PLUGIN_URL . 'assets/js/admin.js',
+            'pcl-admin',
+            PCL_PLUGIN_URL . 'assets/js/admin.js',
             ['jquery'],
-            WCL_VERSION,
+            PCL_VERSION,
             true
         );
     }

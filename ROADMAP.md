@@ -1,6 +1,6 @@
-# 🚧 Woo Category Loader – Roadmap
+# 🚧 Product Category Loader – Roadmap
 
-This roadmap outlines planned development milestones for both the **free** and **paid (PRO)** versions of the Woo Category Loader WordPress plugin.
+This roadmap outlines planned development milestones for both the **free** and **paid (PRO)** versions of the Product Category Loader WordPress plugin.
 
 ---
 
@@ -9,7 +9,7 @@ This roadmap outlines planned development milestones for both the **free** and *
 A lightweight plugin to display WooCommerce product categories with AJAX "Load More" functionality.
 
 ### Features
-- [x] Shortcode: `[wcl_grid]`
+- [x] Shortcode: `[pcl_grid]`
   - Supports attributes: `columns`, `per_page`, `orderby`, `order`
 - [x] Responsive Grid Layout
   - CSS grid that adapts to any number of columns

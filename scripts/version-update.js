@@ -13,7 +13,7 @@ composerJson.version = newVersion;
 fs.writeFileSync(composerPath, JSON.stringify(composerJson, null, 2));
 
 // 2. Update woo-category-grid-loader.php
-const pluginFilePath = './woo-category-loader.php';
+const pluginFilePath = './product-category-loader.php';
 let pluginFile = fs.readFileSync(pluginFilePath, 'utf8');
 
 // Replace the header version
@@ -22,12 +22,12 @@ pluginFile = pluginFile.replace(
   `$1${newVersion}`
 );
 
-// Replace the WCL_VERSION constant
+// Replace the PCL_VERSION constant
 pluginFile = pluginFile.replace(
-  /define\(\s*'WCL_VERSION'\s*,\s*'[\d.]+'\s*\)/,
-  `define( 'WCL_VERSION', '${newVersion}' )`
+  /define\(\s*'PCL_VERSION'\s*,\s*'[\d.]+'\s*\)/,
+  `define( 'PCL_VERSION', '${newVersion}' )`
 );
 
 fs.writeFileSync(pluginFilePath, pluginFile);
 
-console.log(`Updated version to ${newVersion} in composer.json and woo-category-loader.php`);
+console.log(`Updated version to ${newVersion} in composer.json and product-category-loader.php`);

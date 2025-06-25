@@ -1,65 +1,50 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const container = document.querySelector('.wcl-categories');
-    const loadMore = document.getElementById('wcl-load-more');
+    const container = document.querySelector('.pcl-categories');
+    const loadMore = document.getElementById('pcl-load-more');
 
     if (!container || !loadMore) return;
 
-    let page = parseInt(container.dataset.page, 10);
-    const perPage = parseInt(container.dataset.perPage, 10);
-    const orderby = container.dataset.orderby || 'name';
-    const order = container.dataset.order || 'ASC';
-    const hideEmpty = container.dataset.hide_empty === 'true';
-    const layout = container.dataset.layout || 'grid';
-
     const loadCategories = () => {
-        const formData = new FormData();
-        formData.append('action', 'load_product_categories');
-        formData.append('nonce', WCL_DATA.nonce);
-        formData.append('page', page);
-        formData.append('per_page', perPage);
-        formData.append('orderby', orderby);
-        formData.append('order', order);
-        formData.append('hide_empty', hideEmpty ? '1' : '0');
-        formData.append('layout', layout);
-
-
         loadMore.disabled = true;
         loadMore.textContent = 'Loading...';
 
-        fetch(WCL_DATA.ajax_url, {
+        fetch(PCL_DATA.ajax_url, {
             method: 'POST',
-            body: formData,
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+                action: 'load_product_categories',
+                nonce: PCL_DATA.nonce,
+                page: container.dataset.page,
+                per_page: container.dataset.perPage,
+                orderby: container.dataset.orderby || 'name',
+                order: container.dataset.order || 'ASC',
+                hide_empty: container.dataset.hideEmpty === 'true' ? '1' : '0',
+                layout: container.dataset.layout || 'grid'
+            })
         })
         .then(res => res.json())
         .then(data => {
             if (data.success) {
-                const { html, has_more } = data.data;
-
                 const temp = document.createElement('div');
-                temp.innerHTML = html;
-
-                // Separate category grid and has_more
-                const categories = temp.querySelectorAll('.wcl-category');
-                categories.forEach(cat => container.appendChild(cat));
-
-                page++;
-                container.dataset.page = page;
-
-                if (!has_more) {
-                    loadMore.style.display = 'none';
-                } else {
-                    loadMore.disabled = false;
-                    loadMore.textContent = 'Load More';
-                }
+                temp.innerHTML = data.data.html;
+                container.append(...temp.children);
+                container.dataset.page = parseInt(container.dataset.page) + 1;
+                loadMore.style.display = data.data.has_more ? '' : 'none';
             } else {
                 loadMore.style.display = 'none';
             }
         })
         .catch(() => {
             loadMore.style.display = 'none';
+        })
+        .finally(() => {
+            loadMore.disabled = false;
+            loadMore.textContent = 'Load More';
         });
     };
 
-    loadCategories(); // Initial load
     loadMore.addEventListener('click', loadCategories);
+    loadCategories(); // Initial load
 });

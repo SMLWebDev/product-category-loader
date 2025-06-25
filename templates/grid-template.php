@@ -5,25 +5,25 @@
  */
 ?>
 
-<div id="wcl-category-grid wcl-categories" 
-            class="wcl-categories wcl-grid columns-<?= esc_attr( $atts['columns'] ) ?>" 
-            data-per-page="<?= esc_attr( $atts['per_page'] ) ?>" 
+<div id="pcl-category-grid pcl-categories" 
+            class="pcl-categories pcl-grid columns-<?php echo esc_attr( $atts['columns'] ) ?>" 
+            data-per-page="<?php echo esc_attr( $atts['per_page'] ) ?>" 
             data-page="1"
-            data-orderby="<?= esc_attr( $atts['orderby'] ) ?>"
-            data-order="<?= esc_attr( $atts['order'] ) ?>"
-            data-hide_empty="<?= $atts['hide_empty'] ? 'true' : 'false' ?>"
-            data-layout="<?= esc_attr( $atts['layout'] ) ?>"
+            data-orderby="<?php echo esc_attr( $atts['orderby'] ) ?>"
+            data-order="<?php echo esc_attr( $atts['order'] ) ?>"
+            data-hide_empty="<?php echo $atts['hide_empty'] ? 'true' : 'false' ?>"
+            data-layout="<?php echo esc_attr( $atts['layout'] ) ?>"
             >
             <!-- Categories will load here via JS -->
-        </div>
+    </div>
 
-        <div class="wcl-button-container">
-            <button id="wcl-load-more" class="wcl-load-more">Load More...</button>
-        </div>
+     <div class="pcl-button-container">
+    <button id="pcl-load-more" class="pcl-load-more">Load More...</button>
+</div>
 
-        <script>
-            window.WCL_DATA = {
-                ajax_url: "<?= admin_url( 'admin-ajax.php' ); ?>",
-                nonce: "<?= wp_create_nonce( 'wcl_nonce' ); ?>"
-            };
-        </script>
+<script>
+window.PCL_DATA = {
+    ajax_url: "<?php echo esc_url(admin_url('admin-ajax.php')); ?>",
+    nonce: "<?php echo esc_js(wp_create_nonce('pcl_nonce')); ?>"
+};
+</script>

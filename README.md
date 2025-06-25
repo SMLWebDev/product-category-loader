@@ -1,4 +1,4 @@
-# Woo Category Loader
+# Product Category Loader
 
 A Lightweight, customisable WordPress plugin to display WooCommerce Product Categories in a responsive Layout with pagination.
 
@@ -21,7 +21,7 @@ A Lightweight, customisable WordPress plugin to display WooCommerce Product Cate
 
 ## 🧾 Shortcode Usage
 
-Use the `[woo_category_loader]` shortcode anywhere on a page or post
+Use the `[product_category_loader]` shortcode anywhere on a page or post
 
 `columns` - Can use a number of columns between 1-6.<br>
 `per_page` - No limit is set on per_page attribute.<br>
@@ -46,7 +46,7 @@ Use the `[woo_category_loader]` shortcode anywhere on a page or post
 ### Example
 
 ```php
-[woo_category_loader columns="3" per_page="6" class="columns-3" orderby="name" order="ASC" hide_empty="false" layout="grid"]
+[product_category_loader columns="3" per_page="6" class="columns-3" orderby="name" order="ASC" hide_empty="false" layout="grid"]
 ```
 
 ### Attributes:
@@ -79,14 +79,14 @@ If you use Composer to manage WordPress:
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/sml-web-dev/woo-category-loader"
+            "url": "https://github.com/sml-web-dev/product-category-loader"
         }
     ]
 ```
 
 ##### 2. Require it:
 ```composer
-    composer require sml-web-dev/woo-category-loader
+    composer require sml-web-dev/product-category-loader
 ```
 
 ##### 3. Activate the plugin in WordPress admin (or automate with WP-CLI if needed).
@@ -95,8 +95,8 @@ If you use Composer to manage WordPress:
 
 ## Support
 Before reporting issues:
-1. Check the [FAQ](https://wordpress.org/plugins/woo-category-loader/#faq)
-2. Search [WordPress Support](https://wordpress.org/support/plugin/woo-category-loader/)
+1. Check the [FAQ](https://wordpress.org/plugins/product-category-loader/#faq)
+2. Search [WordPress Support](https://wordpress.org/support/plugin/product-category-loader/)
 3. For confirmed bugs, use [GitHub Issues](https://github.com/your-repo/issues/new?template=bug_report.md)
 
 ## 💬 Community Support

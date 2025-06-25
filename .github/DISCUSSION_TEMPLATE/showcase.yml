@@ -30,7 +30,7 @@ body:
       placeholder: |
         ```php
         // Custom code snippets
-        add_filter('wcl_grid_args', function($args) {
+        add_filter('pcl_grid_args', function($args) {
           return $args;
         });
         ```
