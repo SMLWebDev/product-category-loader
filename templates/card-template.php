@@ -1,4 +1,7 @@
 <?php
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 /**
  * Card Layout Template
  * @var array $shortcode_atts
@@ -21,10 +24,3 @@
 <div class="pcl-button-container">
     <button id="pcl-load-more" class="pcl-load-more"><?php esc_html_e( 'Load More...', 'product-category-loader' ); ?></button>
 </div>
-
-<script>
-window.PCL_DATA = {
-    ajax_url: "<?php echo esc_url(admin_url('admin-ajax.php')); ?>",
-    nonce: "<?php echo esc_js(wp_create_nonce('pcl_nonce')); ?>"
-};
-</script>

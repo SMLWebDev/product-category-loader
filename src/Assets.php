@@ -2,6 +2,8 @@
 
 namespace PCL;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 use function PHPSTORM_META\map;
 
 class Assets {
@@ -36,6 +38,12 @@ class Assets {
         wp_localize_script( 'pcl-frontend', 'pcl_settings', [
             'per_page'  => 6,
         ] );
+
+        $inline_js = 'window.PCL_DATA = ' . wp_json_encode([
+            'ajax_url'  => admin_url('admin-ajax.php'),
+            'nonce'     => wp_create_nonce('pcl_nonce'),
+        ]) . ';';
+        wp_add_inline_script('pcl-frontend', $inline_js, 'before');
     }
 
     public function enqueue_admin_assets($hook_suffix) {

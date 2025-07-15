@@ -2,9 +2,11 @@
 
 namespace PCL;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Shortcode {
     public function register() {
-        add_shortcode( 'product_category_loader', [ $this, 'render_shortcode' ] );
+        add_shortcode( 'pcl_category_loader', [ $this, 'render_shortcode' ] );
     }
 
     public function render_shortcode( $atts ) {
