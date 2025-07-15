@@ -1,5 +1,5 @@
 === Product Category Loader ===
-Contributors: Simon Lowe
+Contributors: simonlowe
 Tags: woocommerce, category, load more, shortcode, grid layout
 Requires at least: 5.8
 Tested up to: 6.8
