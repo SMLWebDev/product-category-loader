@@ -26,13 +26,13 @@ A modern, flexible shortcode plugin that displays WooCommerce product categories
 
 1. Upload the plugin files to the `/wp-content/plugins/product-category-loader` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the ‘Plugins’ screen in WordPress.
-3. Use the shortcode `[product_category_loader]` anywhere you want to display the grid.
+3. Use the shortcode `[pcl_category_loader]` anywhere you want to display the grid.
 
 == Frequently Asked Questions ==
 
 = How do I use the shortcode? =
 
-Use `[product_category_loader]` with optional attributes:
+Use `[pcl_category_loader]` with optional attributes:
 - `per_page`
 - `columns`
 - `order`
@@ -41,7 +41,7 @@ Use `[product_category_loader]` with optional attributes:
 - `layout`
 
 Example:
-`[product_category_loader per_page="6" columns="3" hide_empty="true" layout="card"]`
+`[pcl_category_loader per_page="6" columns="3" hide_empty="true" layout="card"]`
 
 = Where is the shortcode generator? =
 

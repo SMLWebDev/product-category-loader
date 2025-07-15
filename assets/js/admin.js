@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const hideEmpty = document.getElementById('pcl_hide_empty').checked ? 'true' : 'false';
         const layout = document.getElementById('pcl_layout_option').value || 'grid';
 
-        output.value = `[product_category_loader per_page='${perPage}' columns='${columns}' orderby='${orderby}' order='${order}' hide_empty='${hideEmpty}' layout='${layout}']`;
+        output.value = `[pcl_category_loader per_page='${perPage}' columns='${columns}' orderby='${orderby}' order='${order}' hide_empty='${hideEmpty}' layout='${layout}']`;
     };
 
     // Add event listeners to all inputs and selects

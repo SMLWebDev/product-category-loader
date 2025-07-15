@@ -1,10 +1,13 @@
 <?php
+
 namespace PCL;
+
+if ( ! defined( 'ABSPATH' ) ) exit;
 
 class Ajax {
     public function register() {
-        add_action('wp_ajax_load_product_categories', [$this, 'load_product_categories']);
-        add_action('wp_ajax_nopriv_load_product_categories', [$this, 'load_product_categories']);
+        add_action('wp_ajax_pcl_load_product_categories', [$this, 'load_product_categories']);
+        add_action('wp_ajax_nopriv_pcl_load_product_categories', [$this, 'load_product_categories']);
     }
 
     public function load_product_categories() {

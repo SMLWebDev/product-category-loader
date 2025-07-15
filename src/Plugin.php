@@ -1,6 +1,8 @@
 <?php
+
 namespace PCL;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
 class Plugin {
     public function run() {
         $this->define_constants();

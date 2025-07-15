@@ -1,1 +1,140 @@
-.pcl-admin-page{background:#f5efff;padding:2rem;border-radius:1rem;font-family:"Segoe UI",sans-serif;color:#333}.pcl-admin-page__header{text-align:center;margin-bottom:2rem}.pcl-admin-page__header .pcl-admin-page__title{font-size:2rem;color:#a594f9;margin-bottom:1rem}.pcl-admin-page__shortcode-panel{display:flex;gap:1rem;margin-bottom:2rem;justify-content:center}.pcl-admin-page__shortcode-panel .pcl-card{background:#e5d9f2;padding:1.5rem;border-radius:.75rem;border:1px solid #cdc1ff;flex:1;max-width:400px}.pcl-admin-page__shortcode-panel .pcl-card strong{display:block;margin-bottom:.5rem;color:#a594f9}.pcl-admin-page__shortcode-panel .pcl-card code{background:rgba(0,0,0,.05);padding:.25rem .5rem;border-radius:.25rem;display:inline-block;margin-top:.5rem}.pcl-admin-page .pcl-generator{background:#e5d9f2;padding:1.5rem;margin-bottom:2rem;border-radius:.75rem;border:1px solid #cdc1ff}.pcl-admin-page .pcl-generator__title{font-size:1.2rem;font-weight:600}.pcl-admin-page .pcl-generator__row{margin-bottom:1.5rem}.pcl-admin-page .pcl-generator__row label{display:block;font-weight:600;margin-bottom:.5rem;color:#333}.pcl-admin-page .pcl-generator__row input:not([type=checkbox]),.pcl-admin-page .pcl-generator__row select{width:100%;padding:.5rem;border:1px solid #cdc1ff;border-radius:.5rem;font-size:1rem;max-width:300px;background:#fff}.pcl-admin-page .pcl-generator__row select{appearance:none;-webkit-appearance:none;-moz-appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A594F9'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right .75rem center;background-size:1.25rem;padding-right:2.5rem;cursor:pointer}.pcl-admin-page .pcl-generator__row select::-ms-expand{display:none}.pcl-admin-page .pcl-generator-output{background:#e5d9f2;padding:1.5rem;margin-bottom:2rem;border-radius:.75rem;border:1px solid #cdc1ff}.pcl-admin-page .pcl-generator-output label{display:block;font-weight:600;margin-bottom:.5rem;color:#333}.pcl-admin-page .pcl-generator-output__input{width:100%;padding:.75rem;border:1px solid #cdc1ff;border-radius:.5rem;font-size:1rem;margin-bottom:1rem;background:#fff}.pcl-admin-page .pcl-generator-output button{background:#a594f9;color:#fff;padding:.75rem 1.5rem;font-size:1rem;border:none;border-radius:.5rem;cursor:pointer;transition:background .3s ease;margin-right:1rem}.pcl-admin-page .pcl-generator-output button:hover{background:hsl(250.099009901,89.3805309735%,87.8431372549%)}.pcl-admin-page .pcl-generator-output button:last-child{margin-right:0}.pcl-admin-page a{color:#a594f9;text-decoration:none}.pcl-admin-page a:hover{text-decoration:underline}
+.pcl-admin-page {
+  background: #F5EFFF;
+  padding: 2rem;
+  border-radius: 1rem;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+}
+.pcl-admin-page__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.pcl-admin-page__header .pcl-admin-page__title {
+  font-size: 2rem;
+  color: #A594F9;
+  margin-bottom: 1rem;
+}
+.pcl-admin-page__shortcode-panel {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+.pcl-admin-page__shortcode-panel .pcl-card {
+  background: #E5D9F2;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border: 1px solid #CDC1FF;
+  flex: 1;
+  max-width: 400px;
+}
+.pcl-admin-page__shortcode-panel .pcl-card strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #A594F9;
+}
+.pcl-admin-page__shortcode-panel .pcl-card code {
+  background: rgba(0, 0, 0, 0.05);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+.pcl-admin-page .pcl-generator {
+  background: #E5D9F2;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #CDC1FF;
+}
+.pcl-admin-page .pcl-generator__title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.pcl-admin-page .pcl-generator__row {
+  margin-bottom: 1.5rem;
+}
+.pcl-admin-page .pcl-generator__row label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.pcl-admin-page .pcl-generator__row input:not([type=checkbox]),
+.pcl-admin-page .pcl-generator__row select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #CDC1FF;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  max-width: 300px;
+  background: white;
+}
+.pcl-admin-page .pcl-generator__row select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23A594F9'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.25rem;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+.pcl-admin-page .pcl-generator__row select::-ms-expand {
+  display: none;
+}
+.pcl-admin-page .pcl-generator-output {
+  background: #E5D9F2;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #CDC1FF;
+}
+.pcl-admin-page .pcl-generator-output label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.pcl-admin-page .pcl-generator-output__input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #CDC1FF;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background: white;
+}
+.pcl-admin-page .pcl-generator-output button {
+  background: #A594F9;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-right: 1rem;
+}
+.pcl-admin-page .pcl-generator-output button:hover {
+  background: rgb(205.6194690265, 196.2920353982, 251.7079646018);
+}
+.pcl-admin-page .pcl-generator-output button:last-child {
+  margin-right: 0;
+}
+.pcl-admin-page a {
+  color: #A594F9;
+  text-decoration: none;
+}
+.pcl-admin-page a:hover {
+  text-decoration: underline;
+}
+
+.pcl-support-links {
+  background: #f8f9fa;
+  padding: 1em;
+  border-left: 4px solid #3858e9;
+}
+
+/*# sourceMappingURL=admin.css.map */

@@ -21,7 +21,7 @@ A Lightweight, customisable WordPress plugin to display WooCommerce Product Cate
 
 ## 🧾 Shortcode Usage
 
-Use the `[product_category_loader]` shortcode anywhere on a page or post
+Use the `[pcl_category_loader]` shortcode anywhere on a page or post
 
 `columns` - Can use a number of columns between 1-6.<br>
 `per_page` - No limit is set on per_page attribute.<br>
@@ -46,7 +46,7 @@ Use the `[product_category_loader]` shortcode anywhere on a page or post
 ### Example
 
 ```php
-[product_category_loader columns="3" per_page="6" class="columns-3" orderby="name" order="ASC" hide_empty="false" layout="grid"]
+[pcl_category_loader columns="3" per_page="6" class="columns-3" orderby="name" order="ASC" hide_empty="false" layout="grid"]
 ```
 
 ### Attributes:

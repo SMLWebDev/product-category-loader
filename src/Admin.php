@@ -2,6 +2,8 @@
 
 namespace PCL;
 
+if ( ! defined( 'ABSPATH' ) ) exit;
+
 class Admin {
     public function __construct() {
         add_action('admin_menu', [$this, 'add_admin_page']);
@@ -38,14 +40,7 @@ class Admin {
                 <div class="pcl-support-links">
                     <p><a href="https://wordpress.org/support/plugin/product-category-loader/" target="_blank">WordPress Support Forum</a></p>
                     <p><a href="https://github.com/SMLWebDev/product-category-loader/issues" target="_blank">GitHub Issue Templates</a></p>
-                </div>
-                <style>
-                    .pcl-support-links {
-                        background: #f8f9fa;
-                        padding: 1em;
-                        border-left: 4px solid #3858e9;
-                    }
-                </style>';
+                </div>';
             },
             'pcl_settings',
             'pcl_section_support'
@@ -97,12 +92,12 @@ class Admin {
                     <div class="pcl-card">
                         <strong>Shortcode</strong>
                         <p>Copy and paste this shortcode into your page:</p>
-                        <code>[product_category_loader]</code>
+                        <code>[pcl_category_loader]</code>
                     </div>
                     <div class="pcl-card">
                         <strong>Template Include</strong>
                         <p>Copy and paste this snippet into your theme template:</p>
-                        <code>&lt;?php echo do_shortcode('[product_category_loader]'); ?&gt;</code>
+                        <code>&lt;?php echo do_shortcode('[pcl_category_loader]'); ?&gt;</code>
                     </div>
                 </div>
             </div>
